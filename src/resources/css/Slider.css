@@ -1,0 +1,38 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.slider {
+  width: calc(50% - 10px); /* Adjusted width for both sliders */
+  margin: 10px 5px;
+}
+
+.left-slider {
+  order: 1; /* To place left slider above right slider */
+}
+
+.right-slider {
+  order: 2; /* To place right slider below left slider */
+}
+
+.slider-values {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slider-values span {
+  width: calc(50% - 10px); /* Adjusted width for both spans */
+  text-align: center;
+}
+
+.slider-values span:first-child {
+  text-align: left;
+}
+
+.slider-values span:last-child {
+  text-align: right;
+}

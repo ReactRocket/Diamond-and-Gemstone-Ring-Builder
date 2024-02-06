@@ -2,8 +2,8 @@ import React from "react";
 
 const Gemstone = () => {
   return (
-    <div className="min-h-screen min-w-full flex justify-center items-center">
-      Gemstone
+    <div className="h-full w-full">
+      <h1 className="text-[#7646D7] text-[52px] font-sans p-10">Gemstone </h1>
     </div>
   );
 };
