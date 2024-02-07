@@ -10,10 +10,10 @@ import Engagement from "./pages/Engagement";
 const App = () => {
   return (
     <div className="h-screen w-screen bg-white overflow-y-scroll">
-      <div className="min-h-[20vh]">
+      <div className="min-h-[15vh]">
         <Header />
       </div>
-      <div className="min-h-[30vh]">
+      <div className="min-h-[35vh]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/diamonds" element={<Diamonds />} />

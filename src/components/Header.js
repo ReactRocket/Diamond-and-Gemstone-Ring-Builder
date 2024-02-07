@@ -26,7 +26,7 @@ const Header = () => {
   const location = useLocation();
   return (
     <>
-      <header className="w-full h-[15vh] ">
+      <header className="w-full h-[15vh]  ">
         <div className="h-1/3 w-full bg-[#FFFFFF] border-b flex justify-center items-center">
           <h1 className="text-sm font-serif  text-[#333641]">
             Welcome to our store
