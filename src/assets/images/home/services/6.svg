@@ -1,0 +1,34 @@
+<svg width="72" height="68" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 1000006192">
+<rect id="Rectangle 34624679" x="9.27173" y="19.3741" width="51.2677" height="35.9441" rx="2.64847" stroke="#7646D7" stroke-width="2"/>
+<g id="Rectangle 34624680">
+<mask id="path-2-inside-1_96_438" fill="white">
+<rect x="19.9469" y="59.9668" width="28.4581" height="7.29694" rx="1.45939"/>
+</mask>
+<rect x="19.9469" y="59.9668" width="28.4581" height="7.29694" rx="1.45939" stroke="#7646D7" stroke-width="4" mask="url(#path-2-inside-1_96_438)"/>
+</g>
+<path id="Rectangle 34624681" d="M27.7727 60.5447C27.6681 60.8434 27.8898 61.1559 28.2063 61.1559H40.1456C40.462 61.1559 40.6837 60.8434 40.5792 60.5447L39.0468 56.1666C38.9823 55.9823 38.8084 55.8589 38.6132 55.8589H29.7386C29.5434 55.8589 29.3695 55.9823 29.305 56.1666L27.7727 60.5447Z" stroke="#7646D7" stroke-width="2"/>
+<rect id="Rectangle 34624664" x="1.24512" y="1.13184" width="46.1598" height="37.4035" rx="2.64847" fill="white" stroke="#7646D7" stroke-width="2"/>
+<rect id="Rectangle 34624673" x="4.62329" y="5.23975" width="1.45939" height="1.45939" rx="0.729694" fill="#7646D7"/>
+<rect id="Rectangle 34624674" x="7.54211" y="5.23975" width="2.18908" height="1.45939" rx="0.729694" fill="#7646D7"/>
+<rect id="Rectangle 34624675" x="11.1906" y="5.23975" width="1.45939" height="1.45939" rx="0.729694" fill="#7646D7"/>
+<rect id="Rectangle 34624676" x="35.2705" y="5.23975" width="7.29694" height="1.45939" rx="0.729694" fill="#7646D7"/>
+<rect id="Rectangle 34624678" x="34.5408" y="32.2384" width="7.29694" height="1.45939" rx="0.729694" fill="#7646D7"/>
+<g id="Rectangle 34624666">
+<mask id="path-10-inside-2_96_438" fill="white">
+<rect x="6.08264" y="14.7257" width="15.3236" height="18.9721" rx="1.45939"/>
+</mask>
+<rect x="6.08264" y="14.7257" width="15.3236" height="18.9721" rx="1.45939" stroke="#7646D7" stroke-width="4" mask="url(#path-10-inside-2_96_438)"/>
+</g>
+<g id="Rectangle 34624677">
+<mask id="path-11-inside-3_96_438" fill="white">
+<rect x="24.3251" y="14.7257" width="18.2424" height="7.29694" rx="1.45939"/>
+</mask>
+<rect x="24.3251" y="14.7257" width="18.2424" height="7.29694" rx="1.45939" stroke="#7646D7" stroke-width="4" mask="url(#path-11-inside-3_96_438)"/>
+</g>
+<path id="Vector 507" d="M10.4608 49.0214L61.5394 49.0214" stroke="#7646D7" stroke-width="2" stroke-linejoin="round"/>
+<path id="Vector 506" d="M1.70447 10.3475L46.2158 10.3475" stroke="#7646D7" stroke-width="2" stroke-linejoin="round"/>
+<rect id="Rectangle 34624682" x="55.2426" y="38.3462" width="15.5127" height="27.9175" rx="2.64847" fill="white" stroke="#7646D7" stroke-width="2"/>
+<rect id="Rectangle 34624683" x="61.5394" y="59.2371" width="2.91878" height="2.91878" rx="1.45939" fill="#7646D7"/>
+</g>
+</svg>
