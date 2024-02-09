@@ -3,8 +3,8 @@ import React from "react";
 const Card = () => {
   return (
     <>
-      <div className="flex justify-center items-center bg-gray-200 min-h-screen">
-        <div className="bg-white rounded-md shadow-md p-8 w-full sm:w-3/4 md:w-3/4 lg:w-3/4 xl:w-3/4 max-w-lg">
+      {/* <div className="flex justify-center items-center  min-h-screen"> */}
+        <div className="bg-white border-2 border-black rounded-md  p-8 h-full w-full  ">
           <div className="flex items-center justify-center">
             <a href="#">
               <img
@@ -33,12 +33,26 @@ const Card = () => {
             <a href="#" className="text-sm">
               0.37 Carat E-VVSI Round cut Diamond
             </a>
-            <p className="text-center">
-              <span className="text-purple-600 text-lg">$3,000</span>
-            </p>
+            <div className="mb-2 display flex  w-full flex-row justify-between  items-center">
+              <span>
+                &nbsp;
+              </span>
+              <p className="text-center">
+                <span className="text-purple-600 text-lg ">$3,000</span>
+              </p>
+              <a href="">
+                <img
+                  src="https://cdn.shopify.com/extensions/ab08ec47-3b32-47bb-a0ca-6315403a4345/0.0.0/assets/comparizon-icon.svg"
+                  loading="lazy"
+                  alt="compare"
+                  width="35"
+                  height="35"
+                />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 };

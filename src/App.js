@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Diamonds from "./pages/Diamonds";
 import Gemstone from "./pages/Gemstone";
 import Engagement from "./pages/Engagement";
+import Card from "./components/Card";
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
         <Footer />
       </div>
     </div>
+    
+    
+  
   );
 };
 
