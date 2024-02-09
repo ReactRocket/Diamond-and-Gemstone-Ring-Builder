@@ -8,18 +8,17 @@ import serviceImg_6 from "../assets/images/home/services/6.svg";
 import serviceImg_7 from "../assets/images/home/services/7.svg";
 import serviceImg_8 from "../assets/images/home/services/8.svg";
 
-import Diamond1 from '../assets/images/home/card/Diamond1/Diamond1.webp'
-import Diamond1_hover from '../assets/images/home/card/Diamond1/Diamond1_hover.webp'
+import Diamond1 from "../assets/images/home/card/Diamond1/Diamond1.webp";
+import Diamond1_hover from "../assets/images/home/card/Diamond1/Diamond1_hover.webp";
 
-import Diamond2 from '../assets/images/home/card/Diamond2/Diamond2.webp'
-import Diamond2_hover from '../assets/images/home/card/Diamond2/Diamond2_hover.webp'
+import Diamond2 from "../assets/images/home/card/Diamond2/Diamond2.webp";
+import Diamond2_hover from "../assets/images/home/card/Diamond2/Diamond2_hover.webp";
 
-import Diamond3 from '../assets/images/home/card/Diamond3/Diamond3.webp'
-import Diamond3_hover from '../assets/images/home/card/Diamond3/Diamond3_hover.webp'
+import Diamond3 from "../assets/images/home/card/Diamond3/Diamond3.webp";
+import Diamond3_hover from "../assets/images/home/card/Diamond3/Diamond3_hover.webp";
 
-import Diamond4 from '../assets/images/home/card/Diamond4/Diamond4.webp'
-import Diamond4_hover from '../assets/images/home/card/Diamond4/Diamond4_hover.webp'
-
+import Diamond4 from "../assets/images/home/card/Diamond4/Diamond4.webp";
+import Diamond4_hover from "../assets/images/home/card/Diamond4/Diamond4_hover.webp";
 
 const servicesListArray = [
   {
@@ -100,19 +99,19 @@ const featuredProductsListArray = [
   },
 
   {
-    img:Diamond2 ,
+    img: Diamond2,
     hoverImg: Diamond2_hover,
     title: "Estelle Channel Set Diamond Engagement Ring",
     price: "$3,200",
   },
   {
-    img:Diamond3 ,
+    img: Diamond3,
     hoverImg: Diamond3_hover,
     title: "Estelle Channel Set Diamond Engagement Ring",
     price: "$3,200",
   },
   {
-    img:Diamond4 ,
+    img: Diamond4,
     hoverImg: Diamond4_hover,
     title: "Estelle Channel Set Diamond Engagement Ring",
     price: "$3,200",
@@ -122,7 +121,6 @@ const featuredProductsListArray = [
 const Home = () => {
   return (
     <div className="h-full w-full ">
-
       {/* section -1  */}
       <div
         class=" h-[40vh] w-full bg-cover bg-no-repeat bg-white backdrop-brightness-50"
@@ -161,30 +159,33 @@ const Home = () => {
       {/* Section -2 */}
 
       <div className="  px-16 py-12  min-h-[60vh] w-full">
-        <div className="">
+        {/* <div className="  px-16 py-12 w-full"> */}
+
+        <div className="h-[15%]">
           <h1 className="text-3xl  font-semibold">Featured products</h1>
         </div>
-        <div className="mt-4 h-96 w-1/4">
-          <ul className=" flex gap-6">
+        <div className="mt-4 h-[85%] w-full ">
+          <ul className="relative flex gap-6">
             {featuredProductsListArray?.map((val, index) => {
               return (
                 <li key={index}>
                   <a href="">
                     <img
-                      className="p-3"
+                      className="p-3 w-full h-full"
                       src={val.img}
                       alt={val.img}
                       loading="lazy"
-                      width="800"
-                      height="800"
+                    
                     />
+                    
                     <img
-                      className="w-full absolute top-0 opacity-0  hover:opacity-100 transition duration-300 ease-in-out"
+                      
+                      className="w-1/4 h-full absolute top-0 opacity-0   hover:opacity-100 transition duration-300 ease-in-out"
                       src={val.hoverImg}
                       alt={val.hoverImg}
                       loading="lazy"
-                      width="800"
-                      height="800"
+                      width="400"
+                      height="400"
                     />
                   </a>
 
