@@ -17,19 +17,17 @@ import wordpress from "../assets/images/home/expertise/wordpress.png";
 
 import Qotes from "../assets/images/home/terminology/Qotes.webp";
 
-import Diamond1 from '../assets/images/home/card/Diamond1/Diamond1.webp'
-import Diamond1_hover from '../assets/images/home/card/Diamond1/Diamond1_hover.webp'
+import Diamond1 from "../assets/images/home/card/Diamond1/Diamond1.webp";
+import Diamond1_hover from "../assets/images/home/card/Diamond1/Diamond1_hover.webp";
 
-import Diamond2 from '../assets/images/home/card/Diamond2/Diamond2.webp'
-import Diamond2_hover from '../assets/images/home/card/Diamond2/Diamond2_hover.webp'
+import Diamond2 from "../assets/images/home/card/Diamond2/Diamond2.webp";
+import Diamond2_hover from "../assets/images/home/card/Diamond2/Diamond2_hover.webp";
 
-import Diamond3 from '../assets/images/home/card/Diamond3/Diamond3.webp'
-import Diamond3_hover from '../assets/images/home/card/Diamond3/Diamond3_hover.webp'
+import Diamond3 from "../assets/images/home/card/Diamond3/Diamond3.webp";
+import Diamond3_hover from "../assets/images/home/card/Diamond3/Diamond3_hover.webp";
 
-import Diamond4 from '../assets/images/home/card/Diamond4/Diamond4.webp'
-import Diamond4_hover from '../assets/images/home/card/Diamond4/Diamond4_hover.webp'
-
-
+import Diamond4 from "../assets/images/home/card/Diamond4/Diamond4.webp";
+import Diamond4_hover from "../assets/images/home/card/Diamond4/Diamond4_hover.webp";
 
 const servicesListArray = [
   {
@@ -149,19 +147,19 @@ const featuredProductsListArray = [
   },
 
   {
-    img:Diamond2 ,
+    img: Diamond2,
     hoverImg: Diamond2_hover,
     title: "Estelle Channel Set Diamond Engagement Ring",
     price: "$3,200",
   },
   {
-    img:Diamond3 ,
+    img: Diamond3,
     hoverImg: Diamond3_hover,
     title: "Estelle Channel Set Diamond Engagement Ring",
     price: "$3,200",
   },
   {
-    img:Diamond4 ,
+    img: Diamond4,
     hoverImg: Diamond4_hover,
     title: "Estelle Channel Set Diamond Engagement Ring",
     price: "$3,200",
@@ -171,7 +169,6 @@ const featuredProductsListArray = [
 const Home = () => {
   return (
     <div className="h-full w-full ">
-
       {/* section -1  */}
       <div
         class=" h-[40vh] w-full bg-cover bg-no-repeat bg-white backdrop-brightness-50"
@@ -291,12 +288,12 @@ const Home = () => {
           Keyideas Specialization As Jewelry Web Development Company{" "}
         </h1>
 
-        <ul className="min-h-[35vh]  w-full grid   grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-7">
+        <ul className="min-h-[30vh]  w-full grid   grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-7">
           {specializationListArray?.map((val, index) => {
             return (
               <li
                 key={index}
-                className="flex flex-col justify-center items-center  h-full  border border-[#7646D7] rounded-2xl overflow-hidden  "
+                className="flex flex-col justify-center items-center aspect-square  h-full  border border-[#7646D7] rounded-2xl overflow-hidden  "
               >
                 <div className="text-xl font-semibold bg-[#7646D7] w-full h-1/2 text-white flex justify-center items-center p-7">
                   <h1 className=" ">{val.title}</h1>
@@ -335,7 +332,7 @@ const Home = () => {
       </div>
 
       {/* section-6  */}
-      <div className=" min-h-[50vh] w-full p-10">
+      <div className=" min-h-[40vh] w-full p-10">
         <ul className="grid h-full w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center gap-10">
           {terminologyListArray?.map((val, index) => {
             return (
