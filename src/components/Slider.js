@@ -1,92 +1,88 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
+import PropTypes from "prop-types";
+import "../resources/css/Slider.css";
 
-const DoubleRangeSlider = (props) => {
-  const { min, max, onChange } = props;
-  const [lowerValue, setLowerValue] = useState(min);
-  const [upperValue, setUpperValue] = useState(max);
+const Slider = ({ min, max, onChange }) => {
+  const [minVal, setMinVal] = useState(min);
+  const [maxVal, setMaxVal] = useState(max);
+  const minValRef = useRef(min);
+  const maxValRef = useRef(max);
+  const range = useRef(null);
 
-  const handleChange = (index, newValue) => {
-    if (index === 0) {
-      setLowerValue(newValue);
-      if (newValue > upperValue) {
-        setUpperValue(newValue);
-      }
-    } else {
-      setUpperValue(newValue);
+  // Convert to percentage
+  const getPercent = useCallback(
+    (value) => Math.round(((value - min) / (max - min)) * 100),
+    [min, max]
+  );
+
+  // Set width of the range to decrease from the left side
+  useEffect(() => {
+    const minPercent = getPercent(minVal);
+    const maxPercent = getPercent(maxValRef.current);
+
+    if (range.current) {
+      range.current.style.left = `${minPercent}%`;
+      range.current.style.width = `${maxPercent - minPercent}%`;
     }
-    onChange(lowerValue, newValue);
-  };
+  }, [minVal, getPercent]);
 
-  const handleInputChange = (index, e) => {
-    const newValue = parseInt(e.target.value);
-    handleChange(index, newValue);
-  };
+  // Set width of the range to decrease from the right side
+  useEffect(() => {
+    const minPercent = getPercent(minValRef.current);
+    const maxPercent = getPercent(maxVal);
 
-  const handleMouseDown = (index) => {
-    return (e) => {
-      e.preventDefault();
-      const newValue = Math.round(
-        ((e.clientX - e.target.getBoundingClientRect().left) /
-          e.target.clientWidth) *
-          (max - min) +
-          min
-      );
-      handleChange(index, newValue);
-    };
-  };
+    if (range.current) {
+      range.current.style.width = `${maxPercent - minPercent}%`;
+    }
+  }, [maxVal, getPercent]);
 
-  const handleMouseUp = (e) => {
-    e.preventDefault();
-  };
-
-  const handleMouseMove = (index) => {
-    return (e) => {
-      e.preventDefault();
-      const newValue = Math.round(
-        ((e.clientX - e.target.getBoundingClientRect().left) /
-          e.target.clientWidth) *
-          (max - min) +
-          min
-      );
-      handleChange(index, newValue);
-    };
-  };
-
-  const trackStyle = {
-    width: `${(upperValue - lowerValue) / (max - min) * 100}%`,
-    left: `${(lowerValue - min) / (max - min) * 100}%`,
-  };
+  // Get min and max values when their state changes
+  useEffect(() => {
+    onChange({ min: minVal, max: maxVal });
+  }, [minVal, maxVal, onChange]);
 
   return (
-    <div className="relative">
-      <div
-        className="absolute bg-gray-300 h-1 left-0 top-0"
-        style={trackStyle}
-      ></div>
+    <div className="container">
       <input
         type="range"
         min={min}
         max={max}
-        value={lowerValue}
-        onChange={(e) => handleInputChange(0, e)}
-        onMouseDown={handleMouseDown(0)}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove(0)}
-        className="absolute left-0 top-0 h-1 w-full bg-transparent"
+        value={minVal}
+        onChange={(event) => {
+          const value = Math.min(Number(event.target.value), maxVal - 1);
+          setMinVal(value);
+          minValRef.current = value;
+        }}
+        className="thumb thumb--left"
+        style={{ zIndex: minVal > max - 100 && "5" }}
       />
       <input
         type="range"
         min={min}
         max={max}
-        value={upperValue}
-        onChange={(e) => handleInputChange(1, e)}
-        onMouseDown={handleMouseDown(1)}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove(1)}
-        className="absolute right-0 top-0 h-1 w-full bg-transparent"
+        value={maxVal}
+        onChange={(event) => {
+          const value = Math.max(Number(event.target.value), minVal + 1);
+          setMaxVal(value);
+          maxValRef.current = value;
+        }}
+        className="thumb thumb--right"
       />
+
+      <div className="slider">
+        <div className="slider__track" />
+        <div ref={range} className="slider__range" />
+        <div className="slider__left-value">{minVal}</div>
+        <div className="slider__right-value">{maxVal}</div>
+      </div>
     </div>
   );
 };
 
-export default DoubleRangeSlider;
+Slider.propTypes = {
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+export default Slider;
