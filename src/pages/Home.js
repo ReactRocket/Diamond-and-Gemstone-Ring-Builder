@@ -8,8 +8,21 @@ import serviceImg_6 from "../assets/images/home/services/6.svg";
 import serviceImg_7 from "../assets/images/home/services/7.svg";
 import serviceImg_8 from "../assets/images/home/services/8.svg";
 
+
 import Diamond1 from "../assets/images/home/card/Diamond1/Diamond1.webp";
 import Diamond1_hover from "../assets/images/home/card/Diamond1/Diamond1_hover.webp";
+
+import laravel from "../assets/images/home/expertise/laravel.png";
+import ablecommerce from "../assets/images/home/expertise/ablecommerce.png";
+import microsoft_net from "../assets/images/home/expertise/microsoft-net.png";
+import react from "../assets/images/home/expertise/react.png";
+import shopify from "../assets/images/home/expertise/shopify.png";
+import wordpress from "../assets/images/home/expertise/wordpress.png";
+
+import Qotes from "../assets/images/home/terminology/Qotes.webp";
+
+import Diamond1 from '../assets/images/home/card/Diamond1/Diamond1.webp'
+import Diamond1_hover from '../assets/images/home/card/Diamond1/Diamond1_hover.webp'
 
 import Diamond2 from "../assets/images/home/card/Diamond2/Diamond2.webp";
 import Diamond2_hover from "../assets/images/home/card/Diamond2/Diamond2_hover.webp";
@@ -19,6 +32,7 @@ import Diamond3_hover from "../assets/images/home/card/Diamond3/Diamond3_hover.w
 
 import Diamond4 from "../assets/images/home/card/Diamond4/Diamond4.webp";
 import Diamond4_hover from "../assets/images/home/card/Diamond4/Diamond4_hover.webp";
+
 
 const servicesListArray = [
   {
@@ -69,24 +83,63 @@ const specializationListArray = [
     subTitle: " Crafting unique brand profile",
   },
   {
-    title: "Brand Identity",
-    subTitle: " Crafting unique brand profile",
+    title: "Graphics and UI/UX",
+    subTitle: "Creating engaging website designs",
   },
   {
-    title: "Brand Identity",
-    subTitle: " Crafting unique brand profile",
+    title: "Web Design",
+    subTitle: "Building custom jewelry websites",
   },
   {
-    title: "Brand Identity",
-    subTitle: " Crafting unique brand profile",
+    title: "E-Commerce Design",
+    subTitle: " Perfecting online shopping",
   },
   {
-    title: "Brand Identity",
-    subTitle: " Crafting unique brand profile",
+    title: "AR Virtual Try-On",
+    subTitle: " Enhancing jewelry shopping with AR",
   },
   {
-    title: "Brand Identity",
-    subTitle: " Crafting unique brand profile",
+    title: "Digital Marketing",
+    subTitle: "Promoting jewelry brands online",
+  },
+];
+
+const expertiseListArray = [
+  {
+    img: wordpress,
+  },
+  {
+    img: laravel,
+  },
+  {
+    img: react,
+  },
+  {
+    img: ablecommerce,
+  },
+  {
+    img: shopify,
+  },
+  {
+    img: microsoft_net,
+  },
+];
+
+const terminologyListArray = [
+  {
+    disc: "Keyideas seems to be a world class provider from what we experienced on our first project from the very beginning like scoping out the project requirement, design & development, QA & testing phase and finally to migration to our location.",
+    author: "Isaac Gottesman ",
+    place: "dimendSCAASI, Chicago",
+  },
+  {
+    disc: "I had an amazing experience working with Keyideas an excellent team of developers! I'm pleased with their service and commitment. They proved that working with them, was a right decision.",
+    author: "Mordy Karsch ",
+    place: "GivingBack Promotions, San Francisco, CA",
+  },
+  {
+    disc: "The new application was to be used across our offices by senior management at different locations, Keyideas did an excellent work. They clearly understood the requirements and delivered good quality Price Comparison Tool.",
+    author: "Rui (Ray) Wang",
+    place: " Vestas Group, Denmark",
   },
 ];
 
@@ -238,24 +291,72 @@ const Home = () => {
       </div>
 
       {/* section-4 */}
-      <div className="min-h-[50vh]  w-full text-center px-5 ">
-        <h1 className="text-3xl h-[15vh] font-bold text-gray-800 py-10">
+      <div className="min-h-[50vh]  w-full text-center px-5 pb-16">
+        <h1 className="text-3xl min-h-[15vh] font-bold text-gray-800 py-10">
           Keyideas Specialization As Jewelry Web Development Company{" "}
         </h1>
 
-        <ul className="h-[35vh]  w-full grid   grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-10">
+        <ul className="min-h-[35vh]  w-full grid   grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-7">
           {specializationListArray?.map((val, index) => {
             return (
               <li
                 key={index}
-                className="flex flex-col justify-center items-center  h-full border-2 border-[#7646D7] rounded-lg"
+                className="flex flex-col justify-center items-center  h-full  border border-[#7646D7] rounded-2xl overflow-hidden  "
               >
-                <h1 className="text-3xl font-semibold bg-[#7646D7] w-full h-1/2 text-white flex justify-center items-center">
-                  {val.title}
-                </h1>
-                <h2 className="text-sm  text-gray-500 bg-transparent h-1/2 tracking-wider flex justify-center items-center	">
-                  {val.subTitle}
-                </h2>
+                <div className="text-xl font-semibold bg-[#7646D7] w-full h-1/2 text-white flex justify-center items-center p-7">
+                  <h1 className=" ">{val.title}</h1>
+                </div>
+                <div className="text-sm  text-gray-500 bg-white h-1/2 tracking-wider flex justify-center items-center p-5">
+                  <h2>{val.subTitle}</h2>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* section-5 */}
+      <div className=" min-h-[30vh] w-full ">
+        <div className="h-1/4 w-full  flex justify-center items-center">
+          <h1 className="text-3xl font-bold text-gray-700">
+            Wide Range of Expertise
+          </h1>
+        </div>
+        <div className="h-3/4 w-full ">
+          <ul className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 lg:gap-20 p-10">
+            {expertiseListArray?.map((val, index) => {
+              return (
+                <li key={index} className="flex  justify-center items-center ">
+                  <img
+                    className="aspect-auto h-1/2"
+                    src={val.img}
+                    alt={val.img}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+
+      {/* section-6  */}
+      <div className=" min-h-[50vh] w-full p-10">
+        <ul className="grid h-full w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center gap-10">
+          {terminologyListArray?.map((val, index) => {
+            return (
+              <li className="border rounded-3xl border-gray-600 h-3/4 md:w-full  w-3/4  overflow-hidden p-10 text-center flex justify-center items-center flex-col gap-7">
+                <div className="h-1/4 w-full flex justify-center items-center">
+                  <img
+                    src={Qotes}
+                    className="h-full aspect-square"
+                    alt="Qotes"
+                  />
+                </div>
+                <div className="h-1/2 w-full">{val.disc}</div>
+                <div className="h-1/4 w-full font-bold text-xl text-gray-800">
+                  <h1> {val.author}</h1>
+                  <h1>{val.place}</h1>
+                </div>
               </li>
             );
           })}
