@@ -17,6 +17,20 @@ import wordpress from "../assets/images/home/expertise/wordpress.png";
 
 import Qotes from "../assets/images/home/terminology/Qotes.webp";
 
+import Diamond1 from '../assets/images/home/card/Diamond1/Diamond1.webp'
+import Diamond1_hover from '../assets/images/home/card/Diamond1/Diamond1_hover.webp'
+
+import Diamond2 from '../assets/images/home/card/Diamond2/Diamond2.webp'
+import Diamond2_hover from '../assets/images/home/card/Diamond2/Diamond2_hover.webp'
+
+import Diamond3 from '../assets/images/home/card/Diamond3/Diamond3.webp'
+import Diamond3_hover from '../assets/images/home/card/Diamond3/Diamond3_hover.webp'
+
+import Diamond4 from '../assets/images/home/card/Diamond4/Diamond4.webp'
+import Diamond4_hover from '../assets/images/home/card/Diamond4/Diamond4_hover.webp'
+
+
+
 const servicesListArray = [
   {
     img: serviceImg_1,
@@ -126,10 +140,37 @@ const terminologyListArray = [
   },
 ];
 
+const featuredProductsListArray = [
+  {
+    img: Diamond1,
+    hoverImg: Diamond1_hover,
+    title: "Shiera Half Bezel Solitaire Engagement Ring",
+    price: "$1,100",
+  },
+
+  {
+    img:Diamond2 ,
+    hoverImg: Diamond2_hover,
+    title: "Estelle Channel Set Diamond Engagement Ring",
+    price: "$3,200",
+  },
+  {
+    img:Diamond3 ,
+    hoverImg: Diamond3_hover,
+    title: "Estelle Channel Set Diamond Engagement Ring",
+    price: "$3,200",
+  },
+  {
+    img:Diamond4 ,
+    hoverImg: Diamond4_hover,
+    title: "Estelle Channel Set Diamond Engagement Ring",
+    price: "$3,200",
+  },
+];
+
 const Home = () => {
   return (
     <div className="h-full w-full ">
-      {/* <h1 className="text-[#7646D7] text-[52px] font-sans p-10">Home</h1> */}
 
       {/* section -1  */}
       <div
@@ -166,12 +207,62 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Section -2 */}
+
+      <div className="  px-16 py-12  min-h-[60vh] w-full">
+        <div className="">
+          <h1 className="text-3xl  font-semibold">Featured products</h1>
+        </div>
+        <div className="mt-4 h-96 w-1/4">
+          <ul className=" flex gap-6">
+            {featuredProductsListArray?.map((val, index) => {
+              return (
+                <li key={index}>
+                  <a href="">
+                    <img
+                      className="p-3"
+                      src={val.img}
+                      alt={val.img}
+                      loading="lazy"
+                      width="800"
+                      height="800"
+                    />
+                    <img
+                      className="w-full absolute top-0 opacity-0  hover:opacity-100 transition duration-300 ease-in-out"
+                      src={val.hoverImg}
+                      alt={val.hoverImg}
+                      loading="lazy"
+                      width="800"
+                      height="800"
+                    />
+                  </a>
+
+                  <div className="text-start">
+                    <a href="">
+                      <span className="text-sm hover:border-b border-[#7646D7] text-slate-600">
+                        {val.title}
+                      </span>
+                    </a>
+                  </div>
+
+                  <div className="text-start">
+                    <a href="">
+                      <p className="text-slate-900 ">{val.price}</p>
+                    </a>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+
       {/* section-3 */}
       <div className="min-h-[60vh] w-full text-center flex justify-center items-center flex-col  px-5 py-10">
         <h1 className="text-3xl font-bold text-gray-800 pb-10">
           Discover Stunning Jewelry Website Designs – Try Our Services Today!
         </h1>
-        {/* <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-10"> */}
+
         <ul className="grid lg:grid-cols-4 md:grid-cols-2 grid-col-1  gap-10 p-10">
           {servicesListArray?.map((val, index) => {
             return (
