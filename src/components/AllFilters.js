@@ -25,11 +25,10 @@ const data = [
     img: img1,
   },
 ];
-
 const AllFilters = () => {
   return (
     <div className="px-10 pb-10">
-      <Breadcrumb data={data} />
+      <Breadcrumb data={data}  />
       <div className=" flex justify-center items-center py-7 w-full">
         <button className="w-1/4 bg-[#6d3bae] border-[#6d3bae] border-2 text-white p-2">
           MINED
