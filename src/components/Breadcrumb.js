@@ -1,12 +1,11 @@
 import React from "react";
-import diamond_1 from "../assets/images/breadcrum_icons/diamond.png";
-import diamond_2 from "../assets/images/breadcrum_icons/engagement-ring.png";
-import diamond_3 from "../assets/images/breadcrum_icons/diamond-ring.png";
-const Breadcrumb = () => {
+import demoIMG from "../assets/images/breadcrum_icons/diamond.png";
+
+const Breadcrumb = ({ data }) => {
   return (
     <nav
       aria-label="Breadcrumb"
-      class="flex justify-center items-center max-h-[20vh]"
+      class="flex justify-center items-center max-h-[20vh] pt-10"
     >
       <ol class="flex overflow-hidden  border-y-2  border-[#EBE2FB] text-gray-600 w-full">
         <li class="flex items-center justify-center w-1/3  ">
@@ -16,16 +15,16 @@ const Breadcrumb = () => {
           >
             <div className=" h-full w-1/4 flex justify-end items-center">
               <span className="text-4xl text-gray-700  px-2 font-normal">
-                1
+                {data && data[0].number || "0"}
               </span>
             </div>
             <div className=" h-full w-1/2  flex flex-col justify-center items-start">
-              <span className="text-gray-500 text-sm">Choose a</span>
-              <span className="text-gray-800 text-xl">Diamond</span>
+              <span className="text-gray-500 text-sm"> {data && data[0].text1 || "Text-1"}</span>
+              <span className="text-gray-800 text-xl"> {data && data[0].text2 || "Text-2"}</span>
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={diamond_1}
+                src={data && data[0].img || demoIMG}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
@@ -41,16 +40,16 @@ const Breadcrumb = () => {
           >
             <div className=" h-full w-1/4 flex justify-end items-center">
               <span className="text-4xl text-gray-700  px-2 font-normal">
-                2
+                {data && data[1].number || "0"}
               </span>
             </div>
             <div className=" h-full w-1/2  flex flex-col justify-center items-start">
-              <span className="text-gray-500 text-sm">Choose a</span>
-              <span className="text-gray-800 text-xl">Setting</span>
+              <span className="text-gray-500 text-sm">{data && data[1].text1 || "Text-1"}</span>
+              <span className="text-gray-800 text-xl">{data && data[1].text2 || "Text-2"}</span>
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={diamond_2}
+                src={data && data[1].img || demoIMG}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
@@ -66,16 +65,16 @@ const Breadcrumb = () => {
           >
             <div className=" h-full w-1/4 flex justify-end items-center">
               <span className="text-4xl text-gray-700  px-2 font-normal">
-                3
+                {data && data[2].number || "0"}
               </span>
             </div>
             <div className=" h-full w-1/2  flex flex-col justify-center items-start">
-              <span className="text-gray-500 text-sm">Review</span>
-              <span className="text-gray-800 text-xl">Complete</span>
+              <span className="text-gray-500 text-sm">{data && data[2].text1 || "Text-1"}</span>
+              <span className="text-gray-800 text-xl">{data && data[2].text2 || "Text-2"}</span>
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={diamond_3}
+                src={data && data[2].img || demoIMG}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
