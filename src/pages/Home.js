@@ -8,17 +8,6 @@ import serviceImg_6 from "../assets/images/home/services/6.svg";
 import serviceImg_7 from "../assets/images/home/services/7.svg";
 import serviceImg_8 from "../assets/images/home/services/8.svg";
 
-
-import laravel from "../assets/images/home/expertise/laravel.png";
-import ablecommerce from "../assets/images/home/expertise/ablecommerce.png";
-import microsoft_net from "../assets/images/home/expertise/microsoft-net.png";
-import react from "../assets/images/home/expertise/react.png";
-import shopify from "../assets/images/home/expertise/shopify.png";
-import wordpress from "../assets/images/home/expertise/wordpress.png";
-
-import Qotes from "../assets/images/home/terminology/Qotes.webp";
-
-
 import Diamond1 from "../assets/images/home/card/Diamond1/Diamond1.webp";
 import Diamond1_hover from "../assets/images/home/card/Diamond1/Diamond1_hover.webp";
 
@@ -186,9 +175,11 @@ const Home = () => {
                       src={val.img}
                       alt={val.img}
                       loading="lazy"
+                    
                     />
-
+                    
                     <img
+                      
                       className="w-1/4 h-full absolute top-0 opacity-0   hover:opacity-100 transition duration-300 ease-in-out"
                       src={val.hoverImg}
                       alt={val.hoverImg}
