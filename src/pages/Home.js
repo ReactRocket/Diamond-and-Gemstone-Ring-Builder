@@ -9,9 +9,6 @@ import serviceImg_7 from "../assets/images/home/services/7.svg";
 import serviceImg_8 from "../assets/images/home/services/8.svg";
 
 
-import Diamond1 from "../assets/images/home/card/Diamond1/Diamond1.webp";
-import Diamond1_hover from "../assets/images/home/card/Diamond1/Diamond1_hover.webp";
-
 import laravel from "../assets/images/home/expertise/laravel.png";
 import ablecommerce from "../assets/images/home/expertise/ablecommerce.png";
 import microsoft_net from "../assets/images/home/expertise/microsoft-net.png";
