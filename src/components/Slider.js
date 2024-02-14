@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import "../resources/css/Slider.css";
 
-const Slider = ({ min, max, onChange }) => {
+const Slider = ({ min, max, onChange, dataArray }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(min);
@@ -38,7 +38,9 @@ const Slider = ({ min, max, onChange }) => {
 
   // Get min and max values when their state changes
   useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
+    //onChange({ min: minVal, max: maxVal });
+    //console.log("minVal, maxVal:", minVal, maxVal);
+    console.log("min:", minVal, " max:", maxVal);
   }, [minVal, maxVal, onChange]);
 
   return (
@@ -49,7 +51,7 @@ const Slider = ({ min, max, onChange }) => {
         max={max}
         value={minVal}
         onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
+          const value = Math.min(Number(event.target.value), maxVal);
           setMinVal(value);
           minValRef.current = value;
         }}
@@ -62,7 +64,7 @@ const Slider = ({ min, max, onChange }) => {
         max={max}
         value={maxVal}
         onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
+          const value = Math.max(Number(event.target.value), minVal);
           setMaxVal(value);
           maxValRef.current = value;
         }}
@@ -72,8 +74,32 @@ const Slider = ({ min, max, onChange }) => {
       <div className="slider">
         <div className="slider__track" />
         <div ref={range} className="slider__range" />
-        <div className="slider__left-value">{minVal}</div>
-        <div className="slider__right-value">{maxVal}</div>
+      </div>
+      <div className="values">
+        {dataArray.length > 0 ? (
+          dataArray?.map((val) => {
+            return <div>{val}</div>;
+          })
+        ) : (
+          <>
+            <input
+              className="slider__left-value "
+              onChange={(e) =>
+                minVal > min && minVal < max && setMinVal(e.target.value)
+              }
+              value={minVal}
+              type="number"
+            />
+            <input
+              className="slider__right-value"
+              onChange={(e) =>
+                maxVal > min && maxVal < max && setMaxVal(e.target.value)
+              }
+              value={maxVal}
+              type="number"
+            />
+          </>
+        )}
       </div>
     </div>
   );
