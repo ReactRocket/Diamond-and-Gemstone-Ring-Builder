@@ -7,6 +7,7 @@ import img3 from "../../assets/images/breadcrum_icons/engagement-ring.png";
 import sample1 from "../../assets/images/home/card/ChildDiamond/Sample1.jpg";
 import Thumb1 from "../../assets/images/home/card/ChildDiamond/Thumb1.jpg";
 
+
 import { Link } from "react-router-dom";
 
 const data = [
@@ -30,15 +31,32 @@ const data = [
   },
 ];
 
+const diamondInformationArray = [
+  { SKU: "132FA4FITLRIQQD" },
+  { Shape: "Round" },
+  { Carat: "2.04" },
+  { Color: "D" },
+  { Clarity: "VS1" },
+  { Cut: "Excellent" },
+  { Polish: "Excellent" },
+  { Symmetry: "Excellent" },
+  { Fluorescence: "NON" },
+  { "Measurements (mm)": "8.2 - 8.21 * 4.94" },
+  { "Table %": "58" },
+  { "Depth %": "60.2" },
+  { "L/W Ratio": "1" },
+  { "LAB Report": "GIA" },
+];
+
 const DiamondsChild = () => {
   return (
     <div className="mx-auto w-[90%]">
       <Breadcrumb data={data} />
       <div className="w-full  h-6 mt-8 flex flex-row justify-between  items-center">
-        <Link to="/">
+        <Link to="/diamonds">
           <span className="text-xs underline ">BACK TO COLLECTION</span>
         </Link>
-        <Link to="dianmond">
+        <Link to="/diamonds">
           <span className="text-xs underline">START OVER</span>
         </Link>
         <span>&nbsp;</span>
@@ -190,6 +208,52 @@ const DiamondsChild = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="h-screen mt-36 w-full">
+        <div className="h-10 w-full ">
+          <p className="text-2xl">Product Description</p>
+        </div>
+        <div className="h-5 w-full mt-3">
+          <p>
+            This 2.03 carat Emerald Diamond F color VS1 clarity has Excellent
+            proportions and a diamond grading report from IGI.
+          </p>
+        </div>
+
+        <div className=" w-full h-7 mt-3">
+          <p className="text-xl">Diamond Information</p>
+        </div>
+        <div className=" flex mt-3 h-[50vh] w-full">
+          <div className=" h-full w-full p-5">
+            <ul className="flex h-full w-full ">
+              {diamondInformationArray?.map((val, index) => {
+                return val.Carat;
+              })}
+            </ul>
+          </div>
+        </div>
+
+        <div className=" h-10 w-full  flex justify-center">
+          <h1 className="text-2xl flex gap-2">
+            Carat Weight:
+            <span className="text-[#7646D7]">2.04 CT</span>
+          </h1>
+        </div>
+        <div className="h-[30vh] w-full text-base text-slate-600 flex text-center bg-lime-20">
+          <p>
+            A carat is simply a weight measurement for s. Most people think the
+            higher the carat number, the larger the stone is; however this isn’t
+            always true. The cut of the makes a big difference in how large the
+            stone appears. For this reason, it’s often a good idea to choose a
+            slightly below your ideal carat weight but with a better cut. The
+            savings can be significant.
+          </p>
+        </div>
+        <div>
+
+        </div>
+        
       </div>
     </div>
   );
