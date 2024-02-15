@@ -6,7 +6,6 @@ import img2 from "../../assets/images/breadcrum_icons/diamond.png";
 import img3 from "../../assets/images/breadcrum_icons/engagement-ring.png";
 import sample1 from "../../assets/images/home/card/ChildDiamond/Sample1.jpg";
 import Thumb1 from "../../assets/images/home/card/ChildDiamond/Thumb1.jpg";
-import Thumb2 from "../../assets/images/home/card/ChildDiamond/Thumb2.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -52,16 +51,11 @@ const DiamondsChild = () => {
                 <img src={Thumb1} />
               </div>
               <div className="  h-20 w-20">
-                <img
-                src={Thumb1}
-              />
-                
+                <img src={Thumb1} />
               </div>
 
               <div className=" h-20 w-20">
-                <img
-                src={Thumb1}
-                />
+                <img src={Thumb1} />
               </div>
             </div>
             <div className="  h-[full] w-[71%]">
@@ -81,18 +75,16 @@ const DiamondsChild = () => {
                     <span className="text-gray-400"> Color</span>
                   </li>
                   <li>
-                    <b className="text-gray-500" >VVS1</b> 
+                    <b className="text-gray-500">VVS1</b>
                     <span className="text-gray-400"> Calrity</span>
-
                   </li>
                   <li>
                     <b className="text-gray-500">Excellent</b>
-                    <span className="text-gray-400">  Cut</span>
-                   
+                    <span className="text-gray-400"> Cut</span>
                   </li>
                 </ul>
               </span>
-            <div className=" h-5 w-3/5 mt-4  flex    justify-start">
+              <div className=" h-5 w-3/5 mt-4  flex    justify-start">
                 <a className="flex gap-3 justify-start border-b-2 border-b-violet-400   cursor-pointer">
                   <svg
                     className=""
