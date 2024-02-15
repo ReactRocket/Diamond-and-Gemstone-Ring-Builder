@@ -5,6 +5,7 @@ import img1 from "../assets/images/breadcrum_icons/diamond-ring.png";
 import img2 from "../assets/images/breadcrum_icons/diamond.png";
 import img3 from "../assets/images/breadcrum_icons/engagement-ring.png";
 import ProductFilter from "./ProductFilter";
+import ProductList from "./ProductList";
 
 const data = [
   {
@@ -24,6 +25,41 @@ const data = [
     text1: "Review",
     text2: "Complete",
     img: img1,
+  },
+];
+
+const productListArray = [
+  {
+    src: "https://nivoda-images.s3.eu-west-2.amazonaws.com/efb2b7b0-5a28-4b0a-9f85-1fc8c06b542f.jpg",
+    title: "2.04 Carat 6E4A7A778 Round Cut Diamond",
+    price: "$7,342",
+    imgLink: "/diamonds/products",
+    view360: "/",
+    compairLink: "/",
+  },
+  {
+    src: "https://nivoda-images.s3.eu-west-2.amazonaws.com/efb2b7b0-5a28-4b0a-9f85-1fc8c06b542f.jpg",
+    title: "2.04 Carat 6E4A7A778 Round Cut Diamond",
+    price: "$7,342",
+    imgLink: "/",
+    view360: "/",
+    compairLink: "/",
+  },
+  {
+    src: "https://nivoda-images.s3.eu-west-2.amazonaws.com/efb2b7b0-5a28-4b0a-9f85-1fc8c06b542f.jpg",
+    title: "2.04 Carat 6E4A7A778 Round Cut Diamond",
+    price: "$7,342",
+    imgLink: "/",
+    view360: "/",
+    compairLink: "/",
+  },
+  {
+    src: "https://nivoda-images.s3.eu-west-2.amazonaws.com/efb2b7b0-5a28-4b0a-9f85-1fc8c06b542f.jpg",
+    title: "2.04 Carat 6E4A7A778 Round Cut Diamond",
+    price: "$7,342",
+    imgLink: "/",
+    view360: "/",
+    compairLink: "/",
   },
 ];
 const AllFilters = () => {
@@ -70,6 +106,7 @@ const AllFilters = () => {
         </span>
       </div>
       <ProductFilter />
+      <ProductList data={productListArray} />
     </div>
   );
 };

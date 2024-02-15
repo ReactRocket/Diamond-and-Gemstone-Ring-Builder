@@ -6,7 +6,7 @@ import img2 from "../../assets/images/breadcrum_icons/diamond.png";
 import img3 from "../../assets/images/breadcrum_icons/engagement-ring.png";
 import sample1 from "../../assets/images/home/card/ChildDiamond/Sample1.jpg";
 import Thumb1 from "../../assets/images/home/card/ChildDiamond/Thumb1.jpg";
-// import Thumb2 from "../../assets/images/home/card/ChildDiamond/Thumb2.jpg";
+
 
 import { Link } from "react-router-dom";
 
