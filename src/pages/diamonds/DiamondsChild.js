@@ -116,8 +116,19 @@ const DiamondsChild = () => {
                   >
                     <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"></path>
                   </svg>
-
-                  <p className="text-gray-500 "> Free Shipping,</p>
+                  <div className="group inline-block relative">
+                    <span className="text-gray-500 group-hover:text-gray-600">
+                      {" "}
+                      Free Shipping,
+                    </span>
+                    <div class="opacity-0  bg-white border-2 text-center text-xs rounded py-2 absolute z-10 group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 transition duration-300">
+                      If for any reason we have not met your expectations, we
+                      would gladly refund, replace, or exchange any unworn
+                      item(s) received back in our facility within 30 days of
+                      receipt.
+                    </div>
+                  </div>
+                  {/* &nbsp; */}
                   <span className="text-gray-500 ">Easy 30 Day Return</span>
                 </a>
               </div>
@@ -250,10 +261,7 @@ const DiamondsChild = () => {
             savings can be significant.
           </p>
         </div>
-        <div>
-
-        </div>
-        
+        <div></div>
       </div>
     </div>
   );
