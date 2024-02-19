@@ -48,16 +48,38 @@ const diamondInformationArray = [
   { "LAB Report": "GIA" },
 ];
 
+const diamondDetailInformationArray = [
+  {
+    title: { "Carat Weight": "2.04 CT" },
+    discription:
+      "A carat is simply a weight measurement for gemstones. Most people think the higher the carat number, the larger the stone is; however this isn’t always true. The cut of the gemstone makes a big difference in how large the stone appears. For this reason, it’s often a good idea to choose a gemstone slightly below your ideal carat weight but with a better cut. The savings can be significant.",
+    data: [0.5, 0.1, 1.5, 2, 2.5, 3],
+  },
+  {
+    title: { "Carat Weight": "2.04 CT" },
+    discription:
+      "A carat is simply a weight measurement for gemstones. Most people think the higher the carat number, the larger the stone is; however this isn’t always true. The cut of the gemstone makes a big difference in how large the stone appears. For this reason, it’s often a good idea to choose a gemstone slightly below your ideal carat weight but with a better cut. The savings can be significant.",
+    data: [0.5, 0.1, 1.5, 2, 2.5, 3],
+  },
+  {
+    title: { "Carat Weight": "2.04 CT" },
+    discription:
+      "A carat is simply a weight measurement for gemstones. Most people think the higher the carat number, the larger the stone is; however this isn’t always true. The cut of the gemstone makes a big difference in how large the stone appears. For this reason, it’s often a good idea to choose a gemstone slightly below your ideal carat weight but with a better cut. The savings can be significant.",
+    data: [0.5, 0.1, 1.5, 2, 2.5, 3],
+  },
+];
+
 const DiamondsChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
 
   return (
     <>
       {modalToggle && <View360Modal setModalToggle={setModalToggle} />}
-      <div className="mx-auto w-[90%]">
+      <div className="mx-auto w-[95%]">
         {/* section-1 of breadcrum */}
         <Breadcrumb data={data} />
-        <div className="w-full  h-6 mt-8 flex flex-row justify-between  items-center">
+
+        <div className="w-full  h-6 pt-8 flex flex-row justify-between  items-center">
           <Link to="/diamonds">
             <span className="text-xs underline ">BACK TO COLLECTION</span>
           </Link>
@@ -68,7 +90,7 @@ const DiamondsChild = () => {
         </div>
 
         {/* section-2 of diamond preview  */}
-        <div className=" px-20  min-h-[50vh] w-full">
+        <div className=" p-20  min-h-[50vh] w-full">
           <div className=" flex h-[50vh]  w-full">
             <div className="h-full  w-[50%] p-2 flex gap-1   ">
               <div className=" space-y-5  w-[19%]">
@@ -246,47 +268,89 @@ const DiamondsChild = () => {
           </div>
         </div>
 
-        <div className="h-screen mt-36 w-full">
+        {/* section - 3 Product Description */}
+        <div className="min-h-[70vh] w-full">
           <div className="h-10 w-full ">
-            <p className="text-2xl">Product Description</p>
+            <p className="text-2xl text-[#242833]">Product Description</p>
           </div>
-          <div className="h-5 w-full mt-3">
-            <p>
+          <div className="h-5 w-full py-5 flex justify-start items-center">
+            <p className="text-[#5B5E66]">
               This 2.03 carat Emerald Diamond F color VS1 clarity has Excellent
               proportions and a diamond grading report from IGI.
             </p>
           </div>
 
-          <div className=" w-full h-7 mt-3">
-            <p className="text-xl">Diamond Information</p>
-          </div>
-          <div className=" flex mt-3 h-[50vh] w-full">
-            <div className=" h-full w-full p-5">
-              <ul className="flex h-full w-full ">
-                {diamondInformationArray?.map((val, index) => {
-                  return val.Carat;
+          <div className=" w-full min-h-1/2  ">
+            <p className="text-lg py-3 text-[#242833] ">Diamond Information</p>
+
+            <div className=" w-full  flex justify-center items-center gap-12 ">
+              <ul className="w-1/2">
+                {diamondInformationArray.map((val, index) => {
+                  if (index < diamondInformationArray.length / 2) {
+                    for (const i in val) {
+                      return (
+                        <li
+                          key={index}
+                          className="w-full flex justify-between items-center p-3 text-[#595C64] 
+                          even:bg-[#FFFFFF] odd:bg-[#F8F8F8]"
+                        >
+                          <span className="w-1/2">{i}:</span>
+                          <span className="flex justify-start items-center w-1/2">
+                            {val[i]}
+                          </span>
+                        </li>
+                      );
+                    }
+                  }
+                })}
+              </ul>
+              <ul className="w-1/2">
+                {diamondInformationArray.map((val, index) => {
+                  if (index >= diamondInformationArray.length / 2) {
+                    for (const i in val) {
+                      return (
+                        <li
+                          key={index}
+                          className="w-full flex justify-between items-center p-3 text-[#595C64] 
+                          even:bg-[#FFFFFF] odd:bg-[#F8F8F8]"
+                        >
+                          <span className="w-1/2">{i}:</span>
+                          <span className="flex justify-start items-center w-1/2">
+                            {val[i]}
+                          </span>
+                        </li>
+                      );
+                    }
+                  }
                 })}
               </ul>
             </div>
           </div>
+        </div>
 
-          <div className=" h-10 w-full  flex justify-center">
-            <h1 className="text-2xl flex gap-2">
-              Carat Weight:
-              <span className="text-[#7646D7]">2.04 CT</span>
-            </h1>
-          </div>
-          <div className="h-[30vh] w-full text-base text-slate-600 flex text-center bg-lime-20">
-            <p>
-              A carat is simply a weight measurement for s. Most people think
-              the higher the carat number, the larger the stone is; however this
-              isn’t always true. The cut of the makes a big difference in how
-              large the stone appears. For this reason, it’s often a good idea
-              to choose a slightly below your ideal carat weight but with a
-              better cut. The savings can be significant.
-            </p>
-          </div>
-          <div></div>
+        {/* section-4 Product Detail Description and visualization */}
+        <div className=" w-full min-h-[10vh] flex justify-start py-10 items-center gap-10 flex-col ">
+          {diamondDetailInformationArray?.map((val, index) => {
+            return (
+              <section
+                key={index}
+                className=" w-full min-h-1/4 px-20"
+              >
+                <article className="w-full text-center py-5 text-xl ">
+                  {Object.keys(val.title).map((key) => (
+                    <p key={key}>
+                      {key}:{" "}
+                      <span className="text-[#7646D7]">{val.title[key]}</span>
+                    </p>
+                  ))}
+                </article>
+                <article className="w-full text-center">
+                  {val.discription}
+                </article>
+                <article className="w-full ">{val.data}</article>
+              </section>
+            );
+          })}
         </div>
       </div>
     </>
