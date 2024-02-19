@@ -7,6 +7,7 @@ import Diamonds from "./pages/Diamonds";
 import Gemstone from "./pages/Gemstone";
 import Engagement from "./pages/Engagement";
 import DiamondsChild from "./pages/diamonds/DiamondsChild";
+import { Error } from "./pages/Error";
 import Test from "./_test/Test";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/gemstones" element={<Gemstone />} />
           <Route path="/engagement" element={<Engagement />} />
           <Route path="/test" element={<Test />} />
+          <Route  path="*" element={<Error/>}/>
         </Routes>
       </div>
       <div className="min-h-[50vh]">
