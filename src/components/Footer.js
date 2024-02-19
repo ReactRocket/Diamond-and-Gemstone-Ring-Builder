@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="h-[50vh] w-full ">
@@ -126,8 +126,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full h-[15%]  flex justify-center items-center">
-        <h1 className="text-sm text-[#4f149a]">
-          © 2024, Diamond and Gemstone Ring Builder Powered by Shopify
+        <h1 className="text-sm text-[#4f149a]  ">
+        © 2024,{""}
+         <Link to="/" className="hover:underline cursor-pointer hover:text-gray-900"> Diamond and Gemstone Ring Builder</Link> {""}
+          <a href="https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore" target="_blank" className="hover:underline cursor-pointer hover:text-gray-900">Powered by Shopify</a> 
         </h1>
       </div>
     </footer>
