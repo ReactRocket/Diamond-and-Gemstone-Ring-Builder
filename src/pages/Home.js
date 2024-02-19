@@ -28,6 +28,7 @@ import Diamond3_hover from "../assets/images/home/card/Diamond3/Diamond3_hover.w
 
 import Diamond4 from "../assets/images/home/card/Diamond4/Diamond4.webp";
 import Diamond4_hover from "../assets/images/home/card/Diamond4/Diamond4_hover.webp";
+import { Link } from "react-router-dom";
 
 const servicesListArray = [
   {
@@ -177,29 +178,29 @@ const Home = () => {
         }}
       >
         <div class=" w-full h-full  flex  flex-col items-end justify-center gap-3 px-16">
-          <button className=" h-1/6 w-1/5 bg-[#7646D7]  hover:bg-[#8357DB]  text-white flex justify-around items-center">
-            <a href="" className="text-center">
+          <Link to="/diamonds" className=" h-1/6 w-1/5 bg-[#7646D7]  hover:bg-[#8357DB]  text-white flex justify-around items-center">
+            <Link to="/diamonds" className="text-center">
               {" "}
               Start with a Diamond
-            </a>
+            </Link>
 
             <img
               src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/diamond.svg?v=565506956968303593"
               width="30px"
               height="30px"
             />
-          </button>
-          <button className=" h-1/6 w-1/5 bg-[#7646D7] hover:bg-[#8357DB]  text-white flex justify-around items-center">
-            <a href="" className="text-center">
+          </Link>
+          <Link to="/engagement" className=" h-1/6 w-1/5 bg-[#7646D7] hover:bg-[#8357DB]  text-white flex justify-around items-center">
+            <Link to="/engagement" className="text-center">
               {" "}
               Start with a Ring
-            </a>
+            </Link>
             <img
               src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/ring.svg?v=14615646449345528242"
               width="30px"
               height="30px"
             />
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -256,7 +257,7 @@ const Home = () => {
 
       {/* section-3 */}
       <div className="min-h-[60vh] w-full text-center flex justify-center items-center flex-col  px-5 py-10">
-        <h1 className="text-3xl font-bold text-gray-800 pb-10">
+        <h1 className="text-3xl font-bold text-gray-800 py-10 pb-10">
           Discover Stunning Jewelry Website Designs – Try Our Services Today!
         </h1>
 
@@ -295,7 +296,7 @@ const Home = () => {
                 key={index}
                 className="flex flex-col justify-center items-center aspect-square  h-full  border border-[#7646D7] rounded-2xl overflow-hidden  "
               >
-                <div className="text-xl font-semibold bg-[#7646D7] w-full h-1/2 text-white flex justify-center items-center p-7">
+                <div className="text-xl cursor-pointer font-semibold bg-[#7646D7] w-full h-1/2 text-white flex justify-center items-center p-7">
                   <h1 className=" ">{val.title}</h1>
                 </div>
                 <div className="text-sm  text-gray-500 bg-white h-1/2 tracking-wider flex justify-center items-center p-5">
@@ -320,7 +321,7 @@ const Home = () => {
               return (
                 <li key={index} className="flex  justify-center items-center ">
                   <img
-                    className="aspect-auto h-1/2"
+                    className="aspect-auto cursor-pointer h-1/2"
                     src={val.img}
                     alt={val.img}
                   />
@@ -337,7 +338,7 @@ const Home = () => {
           {terminologyListArray?.map((val, index) => {
             return (
               <li className="border rounded-3xl border-gray-600 h-[70vh] md:w-full  w-3/4  overflow-hidden p-8 text-center flex justify-center items-center flex-col gap-7">
-                <div className="h-1/4 w-full flex justify-center items-center">
+                <div className="h-1/4  cursor-pointer w-full flex justify-center items-center">
                   <img
                     src={Qotes}
                     className="h-full aspect-square"
@@ -346,7 +347,7 @@ const Home = () => {
                 </div>
                 <div className="h-1/2 w-full">{val.disc}</div>
                 <div className="h-1/4 w-full font-bold text-xl text-gray-800">
-                  <h1> {val.author}</h1>
+                  <h1>{val.author}</h1>
                   <h1>{val.place}</h1>
                 </div>
               </li>
