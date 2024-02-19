@@ -2,7 +2,7 @@ import React from "react";
 
 const View360Modal = ({ src, setModalToggle }) => {
   return (
-    <div className="z-0 fixed top-0 h-screen w-screen bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div className="z-30 absolute top-0 h-screen w-screen bg-gray-900 bg-opacity-50 flex justify-center items-center">
       <div className="z-50 h-[80%] w-[55%] rounded-xl bg-white">
         <div className="w-full h-[5%] pt-5  flex justify-end items-center px-5 ">
           <img

@@ -1,12 +1,11 @@
 import React from "react";
 import demoIMG from "../assets/images/breadcrum_icons/diamond.png";
 
-
-const Breadcrumb = ({data} ) => {
+const Breadcrumb = ({ data }) => {
   return (
     <nav
       aria-label="Breadcrumb"
-      class="flex justify-center items-center max-h-[20vh] pt-10"
+      class=" flex justify-center items-center max-h-[20vh] pt-10 "
     >
       <ol class="flex overflow-hidden  border-y-2  border-[#EBE2FB] text-gray-600 w-full">
         <li class="flex items-center justify-center w-1/3  ">
@@ -39,7 +38,7 @@ const Breadcrumb = ({data} ) => {
           </a>
         </li>
 
-        <li class="relative flex items-center w-1/3">
+        <li class=" relative flex items-center w-1/3">
           <span class="absolute inset-y-0 -start-px h-16 w-4 bg-white [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"></span>
           <a
             href="#"
