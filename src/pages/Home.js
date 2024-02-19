@@ -308,13 +308,13 @@ const Home = () => {
       </div>
 
       {/* section-5 */}
-      <div className=" min-h-[30vh] w-full ">
+      <div className=" min-h-[10vh] w-full">
         <div className="h-1/4 w-full  flex justify-center items-center">
           <h1 className="text-3xl font-bold text-gray-700">
             Wide Range of Expertise
           </h1>
         </div>
-        <div className="h-3/4 w-full ">
+        <div className="h-3/4 b w-full">
           <ul className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 lg:gap-20 p-10">
             {expertiseListArray?.map((val, index) => {
               return (
@@ -332,11 +332,11 @@ const Home = () => {
       </div>
 
       {/* section-6  */}
-      <div className=" min-h-[40vh] w-full p-10">
+      <div className=" min-h-[30vh] w-full p-10">
         <ul className="grid h-full w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center gap-10">
           {terminologyListArray?.map((val, index) => {
             return (
-              <li className="border rounded-3xl border-gray-600 h-3/4 md:w-full  w-3/4  overflow-hidden p-10 text-center flex justify-center items-center flex-col gap-7">
+              <li className="border rounded-3xl border-gray-600 h-[70vh] md:w-full  w-3/4  overflow-hidden p-8 text-center flex justify-center items-center flex-col gap-7">
                 <div className="h-1/4 w-full flex justify-center items-center">
                   <img
                     src={Qotes}

@@ -67,7 +67,7 @@ const Footer = () => {
         <div className="w-1/4 flex justify-center items-end pb-20">
           <ul className="flex justify-center items-center gap-7 text-[#4F149A]">
             <li className="bg-white p-2  rounded-full">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/keyideas-infotech-p-limited/" target="_blank" rel="noopener noreferrer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -81,7 +81,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="bg-white p-2  rounded-full">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/keyideasglobal/" target="_blank" rel="noopener noreferrer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -95,7 +95,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="bg-white p-2  rounded-full">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/keyideasglobal/" target="_blank" rel="noopener noreferrer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -109,7 +109,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="bg-white p-2  rounded-full">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.behance.net/keyideas/" target="_blank" rel="noopener noreferrer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

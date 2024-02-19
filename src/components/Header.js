@@ -24,6 +24,8 @@ const menuList = [
 
 const Header = () => {
   const location = useLocation();
+
+  
   return (
     <>
       <header className="w-full h-[15vh]  ">
@@ -50,8 +52,8 @@ const Header = () => {
               </div>
             </div>
           </Link>
-          <nav className=" h-full w-1/3 ">
-            <ul className="flex justify-around items-center h-full w-full font-light">
+          <nav className=" h-full  w-1/3 ">
+            <ul className="flex  justify-around items-center h-full w-full font-light">
               {menuList?.map((val, i) => {
                 return (
                   <li
