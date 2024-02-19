@@ -171,8 +171,9 @@ const Home = () => {
     <div className="h-full w-full ">
       {/* section -1  */}
       <div
-        class=" h-[40vh] w-full bg-cover bg-no-repeat bg-white backdrop-brightness-50"
+        class=" h-[40vh] w-full bg-cover bg-no-repeat bg-white brightness-[0.8]  backdrop-brightness-50"
         style={{
+          
           backgroundImage:
             "URL('//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/banner-image.png?v=1703593688&amp;width=3840')",
         }}
