@@ -1,29 +1,7 @@
 import React from "react";
-import img1 from "../assets/images/breadcrum_icons/diamond-ring.png";
-import img2 from "../assets/images/breadcrum_icons/diamond.png";
-import img3 from "../assets/images/breadcrum_icons/engagement-ring.png";
 
-import Breadcrumb from "../components/Breadcrumb";
-const data = [
-  {
-    number: 1,
-    text1: "Choose a",
-    text2: "Diamond",
-    img: img2,
-  },
-  {
-    number: 2,
-    text1: "Choose a",
-    text2: "Setting",
-    img: img3,
-  },
-  {
-    number: 3,
-    text1: "Review",
-    text2: "Complete",
-    img: img1,
-  },
-];
+import Breadcrumb from "../../components/Breadcrumb";
+
 
 const Engagement = () => {
   return (

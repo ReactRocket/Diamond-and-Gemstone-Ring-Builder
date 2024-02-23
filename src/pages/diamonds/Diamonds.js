@@ -1,5 +1,5 @@
 import React from "react";
-import AllFilters from "../components/AllFilters";
+import AllFilters from "../../components/AllFilters";
 
 const Diamonds = () => {
   return (
