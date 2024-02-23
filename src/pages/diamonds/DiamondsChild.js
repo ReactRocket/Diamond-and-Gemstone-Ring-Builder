@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 
-
 import sample1 from "./assets/images/Sample1.jpg";
 import Thumb1 from "./assets/images/Thumb1.jpg";
 import diamond_carat from "./assets/images/round-diamond-1.webp";
@@ -100,7 +99,7 @@ const DiamondsChild = () => {
       {modalToggle && <View360Modal setModalToggle={setModalToggle} />}
       <div className="mx-auto w-[95%]">
         {/* section-1 of breadcrum */}
-        <Breadcrumb  />
+        <Breadcrumb />
 
         <div className="w-full  h-6 pt-8 flex flex-row justify-between  items-center">
           <Link to="/diamonds">
@@ -194,14 +193,15 @@ const DiamondsChild = () => {
                         onMouseLeave={() => setShowFreeShippingTooltip(false)}
                       >
                         {" "}
-                        Free Shipping,
+                        Free shipping,
                         {showFreeShippingTooltip && (
-                          
-                          <span className="absolute text-sm shadow-xl  z-10 top-0 transform -translate-x-1/2 mt-[-4rem] left-1/2 w-72 p-2 border  text-black bg-white">
-                            Offers free express shipping with insurance on all
-                            orders.
+                          <span className="absolute z-10  -top-[5rem] transform -translate-x-1/4 left-0 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
+                             <div className="absolute w-4 h-4 aspect-square border-r border-b bg-white  border-gray-300 rotate-45 -top-[-4rem] left-1/2 transform -translate-x-1/2"></div>
+                            <span>
+                              Offers free express shipping with insurance on all
+                              orders.
+                            </span>
                           </span>
-                          
                         )}
                       </a>
                     </div>
@@ -221,8 +221,20 @@ const DiamondsChild = () => {
                           //   unworn item(s) received back in our facility within
                           //   30 days of receipt.
                           // </span>
-                          <div className="absolute z-10  -top-8 transform -translate-x-1/2 left-1/2 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
-                            <div className="absolute w-4  mb-32 h-4 bg-white  border-gray-300 rotate-45 -top-[-7.4rem] left-1/2 transform -translate-x-1/2"></div>
+
+                          
+                          // <div className="absolute z-10  -top-8 transform -translate-x-1/2 left-1/2 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
+                          //   <div className="absolute w-4  mb-32 h-4 bg-white  border-gray-300 rotate-45 -top-[-7.4rem] left-1/2 transform -translate-x-1/2"></div>
+                          //   <p className="text-sm  text-black">
+                          //     If for any reason we have not met your
+                          //     expectations, we would gladly refund, replace, or
+                          //     exchange any unworn item(s) received back in our
+                          //     facility within 30 days of receipt.
+                          //   </p>
+                          // </div>
+
+                          <div className="absolute z-10  -top-[8.5rem] transform -translate-x-1/4 left-1/4 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
+                            <div className="absolute w-4  mb-32 h-4 aspect-square border-r border-b bg-white  border-gray-300 rotate-45 -top-[-7.3rem] left-1/2 transform -translate-x-1/2"></div>
                             <p className="text-sm  text-black">
                               If for any reason we have not met your
                               expectations, we would gladly refund, replace, or
@@ -426,7 +438,10 @@ const DiamondsChild = () => {
                         );
                       })}
                     </ul>
-                    <Tooltip  text="bjh khbgh  hghjgbhjghjk kjhgjkgjh jhjklbj" value="gsedfjhgskfhgdhfgydydrjhgjh" />
+                    <Tooltip
+                      text="bjh khbgh  hghjgbhjghjk kjhgjkgjh jhjklbj"
+                      value="gsedfjhgskfhgdhfgydydrjhgjh"
+                    />
                   </div>
                 </article>
               </section>
