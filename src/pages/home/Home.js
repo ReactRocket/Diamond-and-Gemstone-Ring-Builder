@@ -1,33 +1,33 @@
 import React from "react";
-import serviceImg_1 from "../assets/images/home/services/1.svg";
-import serviceImg_2 from "../assets/images/home/services/2.svg";
-import serviceImg_3 from "../assets/images/home/services/3.svg";
-import serviceImg_4 from "../assets/images/home/services/4.svg";
-import serviceImg_5 from "../assets/images/home/services/5.svg";
-import serviceImg_6 from "../assets/images/home/services/6.svg";
-import serviceImg_7 from "../assets/images/home/services/7.svg";
-import serviceImg_8 from "../assets/images/home/services/8.svg";
+import serviceImg_1 from "./assets/images/services/1.svg";
+import serviceImg_2 from "./assets/images/services/2.svg";
+import serviceImg_3 from "./assets/images/services/3.svg";
+import serviceImg_4 from "./assets/images/services/4.svg";
+import serviceImg_5 from "./assets/images/services/5.svg";
+import serviceImg_6 from "./assets/images/services/6.svg";
+import serviceImg_7 from "./assets/images/services/7.svg";
+import serviceImg_8 from "./assets/images/services/8.svg";
 
-import laravel from "../assets/images/home/expertise/laravel.png";
-import ablecommerce from "../assets/images/home/expertise/ablecommerce.png";
-import microsoft_net from "../assets/images/home/expertise/microsoft-net.png";
-import react from "../assets/images/home/expertise/react.png";
-import shopify from "../assets/images/home/expertise/shopify.png";
-import wordpress from "../assets/images/home/expertise/wordpress.png";
+import laravel from "./assets/images/expertise/laravel.png";
+import ablecommerce from "./assets/images/expertise/ablecommerce.png";
+import microsoft_net from "./assets/images/expertise/microsoft-net.png";
+import react from "./assets/images/expertise/react.png";
+import shopify from "./assets/images/expertise/shopify.png";
+import wordpress from "./assets/images/expertise/wordpress.png";
 
-import Qotes from "../assets/images/home/terminology/Qotes.jpg";
+import Qotes from "./assets/images/terminology/Qotes.jpg";
 
-import Diamond1 from "../assets/images/home/card/Diamond1/Diamond1.webp";
-import Diamond1_hover from "../assets/images/home/card/Diamond1/Diamond1_hover.webp";
+import Diamond1 from "./assets/images/card/Diamond1/Diamond1.webp";
+import Diamond1_hover from "./assets/images/card/Diamond1/Diamond1_hover.webp";
 
-import Diamond2 from "../assets/images/home/card/Diamond2/Diamond2.webp";
-import Diamond2_hover from "../assets/images/home/card/Diamond2/Diamond2_hover.webp";
+import Diamond2 from "./assets/images/card/Diamond2/Diamond2.webp";
+import Diamond2_hover from "./assets/images/card/Diamond2/Diamond2_hover.webp";
 
-import Diamond3 from "../assets/images/home/card/Diamond3/Diamond3.webp";
-import Diamond3_hover from "../assets/images/home/card/Diamond3/Diamond3_hover.webp";
+import Diamond3 from "./assets/images/card/Diamond3/Diamond3.webp";
+import Diamond3_hover from "./assets/images/card/Diamond3/Diamond3_hover.webp";
 
-import Diamond4 from "../assets/images/home/card/Diamond4/Diamond4.webp";
-import Diamond4_hover from "../assets/images/home/card/Diamond4/Diamond4_hover.webp";
+import Diamond4 from "./assets/images/card/Diamond4/Diamond4.webp";
+import Diamond4_hover from "./assets/images/card/Diamond4/Diamond4_hover.webp";
 import { Link } from "react-router-dom";
 
 const servicesListArray = [

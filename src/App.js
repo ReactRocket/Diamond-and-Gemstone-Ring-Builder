@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Footer from "./components/Footer";
-import Diamonds from "./pages/Diamonds";
-import Gemstone from "./pages/Gemstone";
-import Engagement from "./pages/Engagement";
+import Diamonds from "./pages/diamonds/Diamonds";
+import Gemstone from "./pages/gemstone/Gemstone";
+import Engagement from "./pages/engagement/Engagement";
 import DiamondsChild from "./pages/diamonds/DiamondsChild";
-import { Error } from "./pages/Error";
+import { Error } from "./pages/error/Error";
 import Test from "./_test/Test";
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/gemstones" element={<Gemstone />} />
           <Route path="/engagement" element={<Engagement />} />
           <Route path="/test" element={<Test />} />
-          <Route  path="*" element={<Error/>}/>
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
       <div className="min-h-[50vh]">

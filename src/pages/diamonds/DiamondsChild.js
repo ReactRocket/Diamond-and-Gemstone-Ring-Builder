@@ -1,38 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 
-import img1 from "../../assets/images/breadcrum_icons/diamond-ring.png";
-import img2 from "../../assets/images/breadcrum_icons/diamond.png";
-import img3 from "../../assets/images/breadcrum_icons/engagement-ring.png";
-import sample1 from "../../assets/images/home/card/ChildDiamond/Sample1.jpg";
-import Thumb1 from "../../assets/images/home/card/ChildDiamond/Thumb1.jpg";
-import diamond_carat from "../../assets/images/diamonds/diamond_child/diamond_carat_old.png";
+
+import sample1 from "./assets/images/Sample1.jpg";
+import Thumb1 from "./assets/images/Thumb1.jpg";
+import diamond_carat from "./assets/images/round-diamond-1.webp";
 
 import { Link } from "react-router-dom";
 import View360Modal from "../../components/View360Modal";
 import { getCaratPosition } from "../../utils/global.functions";
 import Tooltip from "../../components/Tooltip";
-
-const data = [
-  {
-    number: 1,
-    text1: "Choose a",
-    text2: "Diamond",
-    img: img2,
-  },
-  {
-    number: 2,
-    text1: "Choose a",
-    text2: "Setting",
-    img: img3,
-  },
-  {
-    number: 3,
-    text1: "Review",
-    text2: "Complete",
-    img: img1,
-  },
-];
 
 const diamondInformationArray = [
   { SKU: "132FA4FITLRIQQD" },
@@ -123,7 +100,7 @@ const DiamondsChild = () => {
       {modalToggle && <View360Modal setModalToggle={setModalToggle} />}
       <div className="mx-auto w-[95%]">
         {/* section-1 of breadcrum */}
-        <Breadcrumb data={data} />
+        <Breadcrumb  />
 
         <div className="w-full  h-6 pt-8 flex flex-row justify-between  items-center">
           <Link to="/diamonds">

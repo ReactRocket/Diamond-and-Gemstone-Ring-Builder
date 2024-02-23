@@ -1,7 +1,30 @@
 import React from "react";
-import demoIMG from "../assets/images/breadcrum_icons/diamond.png";
+import img1 from "../assets/images/breadcrum_icons/diamond-ring.png";
+import img2 from "../assets/images/breadcrum_icons/diamond.png";
+import img3 from "../assets/images/breadcrum_icons/engagement-ring.png";
 
-const Breadcrumb = ({ data }) => {
+const defaultData = [
+  {
+    number: 1,
+    text1: "Choose a",
+    text2: "Diamond",
+    img: img2,
+  },
+  {
+    number: 2,
+    text1: "Choose a",
+    text2: "Setting",
+    img: img3,
+  },
+  {
+    number: 3,
+    text1: "Review",
+    text2: "Complete",
+    img: img1,
+  },
+];
+
+const Breadcrumb = () => {
   return (
     <nav
       aria-label="Breadcrumb"
@@ -15,22 +38,22 @@ const Breadcrumb = ({ data }) => {
           >
             <div className=" h-full w-1/4 flex justify-end items-center">
               <span className="text-4xl text-gray-700  px-2 font-normal">
-                {(data && data[0].number) || "0"}
+                {(defaultData && defaultData[0].number) || "0"}
               </span>
             </div>
             <div className=" h-full w-1/2  flex flex-col justify-center items-start">
               <span className="text-gray-500 text-sm">
                 {" "}
-                {(data && data[0].text1) || "Text-1"}
+                {(defaultData && defaultData[0].text1) || "Text-1"}
               </span>
               <span className="text-gray-800 text-xl">
                 {" "}
-                {(data && data[0].text2) || "Text-2"}
+                {(defaultData && defaultData[0].text2) || "Text-2"}
               </span>
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={(data && data[0].img) || demoIMG}
+                src={(defaultData && defaultData[0].img) || img1}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
@@ -46,20 +69,20 @@ const Breadcrumb = ({ data }) => {
           >
             <div className=" h-full w-1/4 flex justify-end items-center">
               <span className="text-4xl text-gray-700  px-2 font-normal">
-                {(data && data[1].number) || "0"}
+                {(defaultData && defaultData[1].number) || "0"}
               </span>
             </div>
             <div className=" h-full w-1/2  flex flex-col justify-center items-start">
               <span className="text-gray-500 text-sm">
-                {(data && data[1].text1) || "Text-1"}
+                {(defaultData && defaultData[1].text1) || "Text-1"}
               </span>
               <span className="text-gray-800 text-xl">
-                {(data && data[1].text2) || "Text-2"}
+                {(defaultData && defaultData[1].text2) || "Text-2"}
               </span>
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={(data && data[1].img) || demoIMG}
+                src={(defaultData && defaultData[1].img) || demoIMG}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
@@ -75,20 +98,20 @@ const Breadcrumb = ({ data }) => {
           >
             <div className=" h-full w-1/4 flex justify-end items-center">
               <span className="text-4xl text-gray-700  px-2 font-normal">
-                {(data && data[2].number) || "0"}
+                {(defaultData && defaultData[2].number) || "0"}
               </span>
             </div>
             <div className=" h-full w-1/2  flex flex-col justify-center items-start">
               <span className="text-gray-500 text-sm">
-                {(data && data[2].text1) || "Text-1"}
+                {(defaultData && defaultData[2].text1) || "Text-1"}
               </span>
               <span className="text-gray-800 text-xl">
-                {(data && data[2].text2) || "Text-2"}
+                {(defaultData && defaultData[2].text2) || "Text-2"}
               </span>
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={(data && data[2].img) || demoIMG}
+                src={(defaultData && defaultData[2].img) || demoIMG}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
