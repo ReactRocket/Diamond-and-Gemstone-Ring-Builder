@@ -173,13 +173,15 @@ const Home = () => {
       <div
         class=" relative h-[40vh] w-full bg-cover bg-no-repeat  brightness-[0.9]"
         style={{
-          
           backgroundImage:
             "URL('//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/banner-image.png?v=1703593688&amp;width=3840')",
         }}
       >
         <div class=" absolute w-full h-full  flex  flex-col items-end justify-center gap-3 px-14">
-          <Link to="/diamonds" className=" h-1/6 w-1/6  bg-[#7646D7]  hover:bg-[#8357DB]  text-white flex justify-around items-center">
+          <Link
+            to="/diamonds"
+            className=" h-1/6 w-1/6  bg-[#7646D7]  hover:bg-[#8357DB]  text-white flex justify-around items-center"
+          >
             <Link to="/diamonds" className="text-center">
               {" "}
               Start with a Diamond
@@ -191,7 +193,10 @@ const Home = () => {
               height="30px"
             />
           </Link>
-          <Link to="/engagement" className=" h-1/6 w-1/6 bg-[#7646D7] hover:bg-[#8357DB]  text-white flex justify-around items-center">
+          <Link
+            to="/engagement"
+            className=" h-1/6 w-1/6 bg-[#7646D7] hover:bg-[#8357DB]  text-white flex justify-around items-center"
+          >
             <Link to="/engagement" className="text-center">
               {" "}
               Start with a Ring

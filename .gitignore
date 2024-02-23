@@ -13,3 +13,4 @@
 .vscode/
 node_modules/
 src/_test
+src/_test/Test.js
