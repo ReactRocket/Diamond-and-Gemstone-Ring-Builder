@@ -51,6 +51,9 @@ const diamondInformationArray = [
 const DiamondsChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
 
+  const [showFreeShippingTooltip, setShowFreeShippingTooltip] = useState(false);
+  const [showReturnTooltip, setShowReturnTooltip] = useState(false);
+
   return (
     <>
       {modalToggle && <View360Modal setModalToggle={setModalToggle} />}
@@ -141,22 +144,56 @@ const DiamondsChild = () => {
                     >
                       <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"></path>
                     </svg>
-                    <div className="group inline-block ">
-                      <span className="text-gray-500 group-hover:text-gray-600">
+                    <div className="relative inline-block">
+                      <a
+                        href="javascript:void(0)"
+                        className=" text-gray-500 group-hover:text-gray-600"
+                        onMouseEnter={() => setShowFreeShippingTooltip(true)}
+                        onMouseLeave={() => setShowFreeShippingTooltip(false)}
+                      >
                         {" "}
                         Free Shipping,
-                      </span>
-                      <div class="opacity-0  bg-white border-2 text-center text-xs rounded py-2 absolute z-10 group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 transition duration-300">
-                        If for any reason we have not met your expectations, we
-                        would gladly refund, replace, or exchange any unworn
-                        item(s) received back in our facility within 30 days of
-                        receipt.
-                      </div>
+                        {showFreeShippingTooltip && (
+                          
+                          <span className="absolute text-sm shadow-xl  z-10 top-0 transform -translate-x-1/2 mt-[-4rem] left-1/2 w-72 p-2 border  text-black bg-white">
+                            Offers free express shipping with insurance on all
+                            orders.
+                          </span>
+                          
+                        )}
+                      </a>
                     </div>
-                    {/* &nbsp; */}
-                    <span className="text-gray-500 ">Easy 30 Day Return</span>
+
+                    <div className="relative inline-block">
+                      <a
+                        href="javascript:void(0)"
+                        className="text-gray-500 group-hover:text-gray-600"
+                        onMouseEnter={() => setShowReturnTooltip(true)}
+                        onMouseLeave={() => setShowReturnTooltip(false)}
+                      >
+                        Easy 30 Day Return
+                        {showReturnTooltip && (
+                          // <span className="absolute z-10  transform top-[-2rem] -translate-x-1/2 mt-[-4rem] left-1/2 w-72 p-1 border text-sm  text-black bg-white">
+                          //   If for any reason we have not met your expectations,
+                          //   we would gladly refund, replace, or exchange any
+                          //   unworn item(s) received back in our facility within
+                          //   30 days of receipt.
+                          // </span>
+                          <div className="absolute z-10  -top-8 transform -translate-x-1/2 left-1/2 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
+                            <div className="absolute w-4  mb-32 h-4 bg-white  border-gray-300 rotate-45 -top-[-7.4rem] left-1/2 transform -translate-x-1/2"></div>
+                            <p className="text-sm  text-black">
+                              If for any reason we have not met your
+                              expectations, we would gladly refund, replace, or
+                              exchange any unworn item(s) received back in our
+                              facility within 30 days of receipt.
+                            </p>
+                          </div>
+                        )}
+                      </a>
+                    </div>
                   </a>
                 </div>
+
                 <div className=" mt-4 h-5 w-3/4">
                   <div className=" flex gap-2 justify-start items-center">
                     <svg
