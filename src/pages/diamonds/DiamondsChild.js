@@ -11,6 +11,7 @@ import diamond_carat from "../../assets/images/diamonds/diamond_child/diamond_ca
 import { Link } from "react-router-dom";
 import View360Modal from "../../components/View360Modal";
 import { getCaratPosition } from "../../utils/global.functions";
+import Tooltip from "../../components/Tooltip";
 
 const data = [
   {
@@ -411,21 +412,7 @@ const DiamondsChild = () => {
                         );
                       })}
                     </ul>
-                    <div className="w-full  relative mt-5">
-                      <div
-                        className="w-1/6 absolute bg-[#7646D7] rounded-md p-5 text-center text-white font-semibold"
-                        style={{ left: `${position}%` }}
-                      >
-                        YOUR{" "}
-                        <span className="d-md-inline d-block">
-                          {" "}
-                          <span className="diamondtype uppercase">
-                            gemstone
-                          </span>
-                        </span>
-                        <div className="text-3xl">2.04</div>
-                      </div>
-                    </div>
+                    <Tooltip  text="bjh khbgh  hghjgbhjghjk kjhgjkgjh jhjklbj" value="gsedfjhgskfhgdhfgydydrjhgjh" />
                   </div>
                 </article>
               </section>
