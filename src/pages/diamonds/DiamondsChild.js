@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 
 import img1 from "../../assets/images/breadcrum_icons/diamond-ring.png";
@@ -6,9 +6,11 @@ import img2 from "../../assets/images/breadcrum_icons/diamond.png";
 import img3 from "../../assets/images/breadcrum_icons/engagement-ring.png";
 import sample1 from "../../assets/images/home/card/ChildDiamond/Sample1.jpg";
 import Thumb1 from "../../assets/images/home/card/ChildDiamond/Thumb1.jpg";
+import diamond_carat from "../../assets/images/diamonds/diamond_child/diamond_carat_old.png";
 
 import { Link } from "react-router-dom";
 import View360Modal from "../../components/View360Modal";
+import { getCaratPosition } from "../../utils/global.functions";
 
 const data = [
   {
@@ -69,8 +71,48 @@ const diamondDetailInformationArray = [
   },
 ];
 
+const diamond_carat_array = [
+  {
+    height: 14,
+    width: 14,
+    Carat: 0.5,
+  },
+  {
+    height: 16,
+    width: 16,
+    Carat: 1,
+  },
+  {
+    height: 18,
+    width: 18,
+    Carat: 1.5,
+  },
+  {
+    height: 20,
+    width: 20,
+    Carat: 2,
+  },
+  {
+    height: 22,
+    width: 22,
+    Carat: 2.5,
+  },
+  {
+    height: 24,
+    width: 24,
+    Carat: 3,
+  },
+];
+
 const DiamondsChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
+  const [position, setPosition] = useState(0);
+
+  useEffect(() => {
+    const test = getCaratPosition(1);
+    // setPosition(test);
+    console.log(test);
+  }, []);
 
   return (
     <>
@@ -332,10 +374,7 @@ const DiamondsChild = () => {
         <div className=" w-full min-h-[10vh] flex justify-start py-10 items-center gap-10 flex-col ">
           {diamondDetailInformationArray?.map((val, index) => {
             return (
-              <section
-                key={index}
-                className=" w-full min-h-1/4 px-20"
-              >
+              <section key={index} className=" w-full min-h-[40vh] px-20">
                 <article className="w-full text-center py-5 text-xl ">
                   {Object.keys(val.title).map((key) => (
                     <p key={key}>
@@ -344,10 +383,51 @@ const DiamondsChild = () => {
                     </p>
                   ))}
                 </article>
-                <article className="w-full text-center">
+                <article className="w-full text-center text-[#5B5E66] font-sans">
                   {val.discription}
                 </article>
-                <article className="w-full ">{val.data}</article>
+                {/* <article className="w-full ">{val.data}</article> */}
+                <article className="w-full py-10">
+                  <div className="">
+                    <ul className=" flex  border-b ">
+                      {diamond_carat_array?.map((val, index) => {
+                        return (
+                          <li className="w-full flex justify-around items-end">
+                            <hr className="border  h-1 " />
+
+                            <div className="flex justify-center items-center flex-col gap-3">
+                              <img
+                                src={diamond_carat}
+                                width={val.height}
+                                height={val.width}
+                                loading="lazy"
+                                className="diamond_carat"
+                                alt="diamond .25"
+                              />
+                              <h1>{val.Carat}CT</h1>
+                              <span className="h-3 border  "></span>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    <div className="w-full  relative mt-5">
+                      <div
+                        className="w-1/6 absolute bg-[#7646D7] rounded-md p-5 text-center text-white font-semibold"
+                        style={{ left: `${position}%` }}
+                      >
+                        YOUR{" "}
+                        <span className="d-md-inline d-block">
+                          {" "}
+                          <span className="diamondtype uppercase">
+                            gemstone
+                          </span>
+                        </span>
+                        <div className="text-3xl">2.04</div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
               </section>
             );
           })}
