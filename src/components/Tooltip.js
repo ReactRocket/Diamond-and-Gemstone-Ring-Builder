@@ -8,7 +8,8 @@ const Tooltip = ({ text, value, position }) => {
         style={{ left: `${position || 0}%` }}
       >
         <span className="bg-[#7646D7] h-5 w-5  inset-y-0 [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] -rotate-90 "></span>
-        <div className=" max-w-full overflow-y-scroll max-h-[100px]  bg-[#7646D7]  rounded-md p-5 text-center text-white font-semibold py-5">
+        <div className="max-w-full max-h-[100px] bg-[#7646D7] rounded-md p-4 text-center text-white font-semibold py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-gary-500 scrollbar-track-gray-300 ">
+
           <span className="d-md-inline d-block">
             <span className="diamondtype uppercase">{text || "Title"}</span>
           </span>
