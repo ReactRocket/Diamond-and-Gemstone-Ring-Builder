@@ -1,5 +1,5 @@
 import React from "react";
-import "./Tooltip.scss";
+import "../resources/css/Tooltip.css";
 
 const Tooltip = ({ text, value, position }) => {
   return (
