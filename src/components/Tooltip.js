@@ -1,4 +1,5 @@
 import React from "react";
+import './Tooltip.scss'
 
 const Tooltip = ({ text, value, position }) => {
   return (
@@ -7,10 +8,11 @@ const Tooltip = ({ text, value, position }) => {
         className="w-1/6 absolute flex justify-center items-center flex-col gap-0 "
         style={{ left: `${position || 0}%` }}
       >
-        <span className="bg-[#7646D7] h-5 w-5  inset-y-0 [clip-path:_polygon(0_0,_0%_100%,_50%_50%)] -rotate-90 "></span>
-        <div className=" max-w-full overflow-y-scroll max-h-[100px]  bg-[#7646D7]  rounded-md p-5 text-center text-white font-semibold py-5">
+        <span className="bg-[#7646D7] h-5 w-5  inset-y-0 [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] -rotate-90 "></span>
+        <div className="max-w-full max-h-[100px] bg-[#7646D7] rounded-md p-4 text-center text-white font-semibold py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-gary-500 scrollbar-track-gray-300 ">
+
           <span className="d-md-inline d-block">
-            <span className="text-sm font-normal uppercase">{text || "Title"}</span>
+            <span id="exam" className="diamondtype uppercase">{text || "Title"}</span>
           </span>
           <div className="text-xl whitespace-normal break-words">
             {value || "0.00"}

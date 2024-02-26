@@ -3,7 +3,7 @@ import React from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 
 
-const Engagement = () => {
+const Engagement = ({data}) => {
   return (
     <div className="h-full w-full">
       {/* section 1 */}

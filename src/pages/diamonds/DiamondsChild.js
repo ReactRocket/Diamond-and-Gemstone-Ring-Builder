@@ -215,23 +215,7 @@ const DiamondsChild = () => {
                       >
                         Easy 30 Day Return
                         {showReturnTooltip && (
-                          // <span className="absolute z-10  transform top-[-2rem] -translate-x-1/2 mt-[-4rem] left-1/2 w-72 p-1 border text-sm  text-black bg-white">
-                          //   If for any reason we have not met your expectations,
-                          //   we would gladly refund, replace, or exchange any
-                          //   unworn item(s) received back in our facility within
-                          //   30 days of receipt.
-                          // </span>
-
                           
-                          // <div className="absolute z-10  -top-8 transform -translate-x-1/2 left-1/2 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
-                          //   <div className="absolute w-4  mb-32 h-4 bg-white  border-gray-300 rotate-45 -top-[-7.4rem] left-1/2 transform -translate-x-1/2"></div>
-                          //   <p className="text-sm  text-black">
-                          //     If for any reason we have not met your
-                          //     expectations, we would gladly refund, replace, or
-                          //     exchange any unworn item(s) received back in our
-                          //     facility within 30 days of receipt.
-                          //   </p>
-                          // </div>
 
                           <div className="absolute z-10  -top-[8.5rem] transform -translate-x-1/4 left-1/4 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
                             <div className="absolute w-4  mb-32 h-4 aspect-square border-r border-b bg-white  border-gray-300 rotate-45 -top-[-7.3rem] left-1/2 transform -translate-x-1/2"></div>
@@ -398,7 +382,7 @@ const DiamondsChild = () => {
         </div>
 
         {/* section-4 Product Detail Description and visualization */}
-        <div className=" w-full min-h-[10vh] flex justify-start py-10 items-center gap-10 flex-col ">
+        <div id="img" className=" w-full min-h-[10vh] flex justify-start py-10 items-center gap-10 flex-col ">
           {diamondDetailInformationArray?.map((val, index) => {
             return (
               <section key={index} className=" w-full min-h-[40vh] px-20">
@@ -439,8 +423,9 @@ const DiamondsChild = () => {
                       })}
                     </ul>
                     <Tooltip
-                      text="bjh khbgh  hghjgbhjghjk kjhgjkgjh jhjklbj"
-                      value="gsedfjhgskfhgdhfgydydrjhgjh"
+                   
+                      text="Your Diamonddgcvhgdcgdcv gvc g c fcxchcscxhsc"
+                      value="h"
                     />
                   </div>
                 </article>
