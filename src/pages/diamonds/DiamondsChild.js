@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./resources/css/DiamondsChild.css";
 import Breadcrumb from "../../components/Breadcrumb";
 
 import sample1 from "./assets/images/Sample1.jpg";
@@ -9,6 +10,11 @@ import { Link } from "react-router-dom";
 import View360Modal from "../../components/View360Modal";
 import { getCaratPosition } from "../../utils/global.functions";
 import Tooltip from "../../components/Tooltip";
+
+import fair from "./assets/images/Cut Grade/fair-poor-cut.svg";
+import good from "./assets/images/Cut Grade/good-cut.svg";
+import ideal from "./assets/images/Cut Grade/ideal-excellent-cut.svg";
+import verygood from "./assets/images/Cut Grade/verygood-cuts.svg";
 
 const diamondInformationArray = [
   { SKU: "132FA4FITLRIQQD" },
@@ -29,22 +35,83 @@ const diamondInformationArray = [
 
 const diamondDetailInformationArray = [
   {
-    title: { "Carat Weight": "2.04 CT" },
+    title: "Carat Weight",
+    value: "2.04 CT",
     discription:
       "A carat is simply a weight measurement for gemstones. Most people think the higher the carat number, the larger the stone is; however this isn’t always true. The cut of the gemstone makes a big difference in how large the stone appears. For this reason, it’s often a good idea to choose a gemstone slightly below your ideal carat weight but with a better cut. The savings can be significant.",
     data: [0.5, 0.1, 1.5, 2, 2.5, 3],
   },
   {
-    title: { "Carat Weight": "2.04 CT" },
+    title: "Color Grade",
+    value: "D",
     discription:
-      "A carat is simply a weight measurement for gemstones. Most people think the higher the carat number, the larger the stone is; however this isn’t always true. The cut of the gemstone makes a big difference in how large the stone appears. For this reason, it’s often a good idea to choose a gemstone slightly below your ideal carat weight but with a better cut. The savings can be significant.",
-    data: [0.5, 0.1, 1.5, 2, 2.5, 3],
+      "Your diamond's Color rating is D. Absolutely colourless and rare. Recommended set in platinum or white gold settings.",
+    data: [
+      {
+        title: "Colorless",
+        value: "D E F",
+      },
+      {
+        title: "Near Colorless",
+        value: "G H I J",
+      },
+      {
+        title: "Faint Color",
+        value: "K L M (Not Carried by us.)",
+      },
+    ],
   },
   {
-    title: { "Carat Weight": "2.04 CT" },
+    title: "Cut Grade",
+    value: "Excellent",
     discription:
-      "A carat is simply a weight measurement for gemstones. Most people think the higher the carat number, the larger the stone is; however this isn’t always true. The cut of the gemstone makes a big difference in how large the stone appears. For this reason, it’s often a good idea to choose a gemstone slightly below your ideal carat weight but with a better cut. The savings can be significant.",
-    data: [0.5, 0.1, 1.5, 2, 2.5, 3],
+      "Excellent cut diamonds radiate with magnificent sparkle, fire, and brilliance due to almost all of the incoming light is reflected through their table.",
+    data: [
+      {
+        title: "Ideal / Excellent Cut",
+        image: ideal,
+      },
+      {
+        title: "Very Good Cut",
+        image: verygood,
+      },
+      {
+        title: "Good Cut",
+        image: good,
+      },
+      {
+        title: "Fair / Poor Cut \n (Not Carried by Us)",
+        image: fair,
+      },
+    ],
+  },
+  {
+    title: "Clarity Grade",
+    value: "VVS1",
+    discription:
+      "Your diamond has VVS1 (Very Very Slightly Included 1) clarity rating. Inclusions are so slight; they are difficult for even a skilled grader to see under 10x magnification.",
+    data: [
+      {
+        title: "Flawless/Internally Flawless",
+        value: "FL IF",
+      },
+      {
+        title: "Very Very Slightly Included",
+        value: "VVS1 VVS2",
+      },
+      {
+        title: "Very Slightly Included",
+        value: "VS1 VS2",
+      },
+      {
+        title: "Slightly Included",
+        value: "SI1 SI2",
+      },
+      {
+        title: "Included",
+        value: "I1 I2 I3  \n (Not Carried by us.)",
+      },
+    ],
   },
 ];
 
@@ -85,14 +152,14 @@ const DiamondsChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
   const [position, setPosition] = useState(0);
 
+  const [showFreeShippingTooltip, setShowFreeShippingTooltip] = useState(false);
+  const [showReturnTooltip, setShowReturnTooltip] = useState(false);
+
   useEffect(() => {
     const test = getCaratPosition(1);
     // setPosition(test);
     console.log(test);
   }, []);
-
-  const [showFreeShippingTooltip, setShowFreeShippingTooltip] = useState(false);
-  const [showReturnTooltip, setShowReturnTooltip] = useState(false);
 
   return (
     <>
@@ -196,7 +263,7 @@ const DiamondsChild = () => {
                         Free shipping,
                         {showFreeShippingTooltip && (
                           <span className="absolute z-10  -top-[5rem] transform -translate-x-1/4 left-0 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
-                             <div className="absolute w-4 h-4 aspect-square border-r border-b bg-white  border-gray-300 rotate-45 -top-[-4rem] left-1/2 transform -translate-x-1/2"></div>
+                            <div className="absolute w-4 h-4 aspect-square border-r border-b bg-white  border-gray-300 rotate-45 -top-[-4rem] left-1/2 transform -translate-x-1/2"></div>
                             <span>
                               Offers free express shipping with insurance on all
                               orders.
@@ -215,8 +282,6 @@ const DiamondsChild = () => {
                       >
                         Easy 30 Day Return
                         {showReturnTooltip && (
-                          
-
                           <div className="absolute z-10  -top-[8.5rem] transform -translate-x-1/4 left-1/4 w-72 p-3 rounded-lg bg-white shadow-md border border-gray-300">
                             <div className="absolute w-4  mb-32 h-4 aspect-square border-r border-b bg-white  border-gray-300 rotate-45 -top-[-7.3rem] left-1/2 transform -translate-x-1/2"></div>
                             <p className="text-sm  text-black">
@@ -382,53 +447,138 @@ const DiamondsChild = () => {
         </div>
 
         {/* section-4 Product Detail Description and visualization */}
-        <div id="img" className=" w-full min-h-[10vh] flex justify-start py-10 items-center gap-10 flex-col ">
+        <div
+          id="img"
+          className=" w-full min-h-[10vh] flex justify-start py-10 items-center gap-10 flex-col "
+        >
           {diamondDetailInformationArray?.map((val, index) => {
             return (
               <section key={index} className=" w-full min-h-[40vh] px-20">
+                {/* title & value  */}
                 <article className="w-full text-center py-5 text-xl ">
-                  {Object.keys(val.title).map((key) => (
-                    <p key={key}>
-                      {key}:{" "}
-                      <span className="text-[#7646D7]">{val.title[key]}</span>
-                    </p>
-                  ))}
+                  <p>
+                    {val.title}
+                    {":"}
+                    <span className="text-[#7646D7]"> {val.value}</span>
+                  </p>
                 </article>
-                <article className="w-full text-center text-[#5B5E66] font-sans">
+
+                {/* discription */}
+                <article className="w-full text-center text-[#5B5E66] font-sans px-10">
                   {val.discription}
                 </article>
-                {/* <article className="w-full ">{val.data}</article> */}
-                <article className="w-full py-10">
-                  <div className="">
-                    <ul className=" flex  border-b ">
-                      {diamond_carat_array?.map((val, index) => {
-                        return (
-                          <li className="w-full flex justify-around items-end">
-                            <hr className="border  h-1 " />
 
-                            <div className="flex justify-center items-center flex-col gap-3">
-                              <img
-                                src={diamond_carat}
-                                width={val.height}
-                                height={val.width}
-                                loading="lazy"
-                                className="diamond_carat"
-                                alt="diamond .25"
-                              />
-                              <h1>{val.Carat}CT</h1>
-                              <span className="h-3 border  "></span>
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    <Tooltip
-                   
-                      text="Your Diamond"
-                      value="hhgbkhjbhjbhjgbj jhkghj jkgkjh jhgkhj jhgkjh "
-                    />
-                  </div>
-                </article>
+                {/* data */}
+
+                {val.title === "Carat Weight" ? (
+                  <article className="w-full py-10">
+                    <div className="">
+                      <ul className=" flex  border-b ">
+                        {diamond_carat_array?.map((val, index) => {
+                          return (
+                            <li className="w-full flex justify-around items-end">
+                              <hr className="border  h-1 " />
+
+                              <div className="flex justify-center items-center flex-col gap-3">
+                                <img
+                                  src={diamond_carat}
+                                  width={val.height}
+                                  height={val.width}
+                                  loading="lazy"
+                                  className="diamond_carat"
+                                  alt="diamond .25"
+                                />
+                                <h1>{val.Carat}CT</h1>
+                                <span className="h-3 border  "></span>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                      <Tooltip
+                        text="Your Diamond"
+                        value={val.value}
+                        position={-5}
+                      />
+                    </div>
+                  </article>
+                ) : val.title === "Color Grade" ? (
+                  <article className="w-full h-[25vh] ">
+                    <div className="w-full h-full ">
+                      <div className="h-1/3 w-full border-b border-[#CCCCCC]   flex justify-between items-end">
+                        <hr className="border border-[#CCCCCC]  h-3 " />
+                        <hr className="border border-[#CCCCCC]  h-3 " />
+                        <hr className="border border-[#CCCCCC]  h-3 " />
+                        <hr className="border border-[#CCCCCC]  h-3 " />
+                      </div>
+                      <ul className="flex h-2/3 w-full bg-[#EBE2FB] bg-gradient-to-r from-white via-blue-byor-color to-blue-byor-color">
+                        {val.data.map((val, index) => {
+                          return (
+                            <>
+                              <hr className="border border-[#CCCCCC]  h-3 " />
+                              <li
+                                key={index}
+                                className="text-[#6F6F6F] w-full flex justify-center items-center flex-col bg-transparent"
+                              >
+                                <span>{val.title}</span>
+                                <span>{val.value}</span>
+                              </li>
+                            </>
+                          );
+                        })}
+                        <hr className="border border-[#CCCCCC]  h-3 " />
+                      </ul>
+                    </div>
+                    <div class="grade-positon grade-positon-J text-red-600">
+                      grade-positon
+                    </div>
+                  </article>
+                ) : val.title === "Cut Grade" ? (
+                  <article className="w-full py-10 flex gap-10">
+                    {val.data.map((val) => {
+                      return (
+                        <div className="w-full h-full text-[#5B5E66] ">
+                          <div className="p-5">
+                            <img src={val.image} alt={val.title} />
+                          </div>
+                          <div className="text-center">
+                            <span>{val.title}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </article>
+                ) : (
+                  <article className="w-full h-[25vh] ">
+                    <div className="w-full h-full ">
+                      <div className="h-1/3 w-full border-b border-[#CCCCCC]   flex justify-between items-end">
+                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                      </div>
+                      <ul className="flex h-2/3 w-full bg-[#EBE2FB] bg-gradient-to-r from-white via-blue-byor-color to-blue-byor-color">
+                        {val.data.map((val, index) => {
+                          return (
+                            <>
+                              <hr className="border border-[#CCCCCC]  h-3 " />
+                              <li
+                                key={index}
+                                className="text-[#6F6F6F] w-full flex justify-center items-center flex-col bg-transparent"
+                              >
+                                <span>{val.title}</span>
+                                <span>{val.value}</span>
+                              </li>
+                            </>
+                          );
+                        })}
+                        <hr className="border border-[#CCCCCC]  h-3 " />
+                      </ul>
+                    </div>
+                  </article>
+                )}
               </section>
             );
           })}
