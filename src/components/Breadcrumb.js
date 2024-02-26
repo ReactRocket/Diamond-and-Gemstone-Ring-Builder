@@ -82,7 +82,7 @@ const Breadcrumb = () => {
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={(defaultData && defaultData[1].img) || demoIMG}
+                src={(defaultData && defaultData[1].img) || "demoIMG"}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />
@@ -111,7 +111,7 @@ const Breadcrumb = () => {
             </div>
             <div className=" h-full w-1/4 flex justify-end items-center">
               <img
-                src={(defaultData && defaultData[2].img) || demoIMG}
+                src={(defaultData && defaultData[2].img) || "demoIMG"}
                 className="object-cover h-1/2 aspect-square"
                 alt=""
               />

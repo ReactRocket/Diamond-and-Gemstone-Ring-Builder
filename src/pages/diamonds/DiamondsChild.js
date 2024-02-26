@@ -424,7 +424,7 @@ const DiamondsChild = () => {
                     </ul>
                     <Tooltip
                    
-                      text="Your Diamond"
+                      text="Your Diamonddgcvhgdcgdcv gvc g c fcxchcscxhsc"
                       value="h"
                     />
                   </div>

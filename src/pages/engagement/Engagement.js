@@ -8,7 +8,7 @@ const Engagement = ({data}) => {
     <div className="h-full w-full">
       {/* section 1 */}
       <div>
-        <Breadcrumb data={data} />
+        <Breadcrumb  />
 
         <h1 className="text-[#7646D7] text-4xl font-sans p-10">
           Engagement Ring{" "}
