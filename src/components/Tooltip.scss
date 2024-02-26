@@ -1,0 +1,27 @@
+.tooltip{
+    overflow-x: hidden;   
+}
+
+.tooltip::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+   
+
+  /* Track */
+.tooltip::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px 10px;
+
+  }
+  
+  /* Handle */
+  .tooltip::-webkit-scrollbar-thumb {
+    background: #9265ec;
+    border-radius: 10px 10px;
+  }
+  
+  /* Handle on hover */
+  .tooltip::-webkit-scrollbar-thumb:hover {
+    background: #7646D7;
+  }
