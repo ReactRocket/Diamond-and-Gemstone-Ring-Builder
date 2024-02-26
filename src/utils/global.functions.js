@@ -26,3 +26,10 @@ export function getCaratPosition(carat) {
     }
   }
 }
+
+export function backToTopScreen() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // for smoothly scrolling
+  });
+}
