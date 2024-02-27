@@ -232,16 +232,15 @@ const Home = () => {
                     />
 
                     <img
-                      className="w-1/4 h-full absolute top-0 opacity-0   hover:opacity-100 transition duration-300 ease-in-out"
+                      className="w-1/4 h-[80%] absolute top-0 opacity-0   hover:opacity-100 transition-all duration-500 ease-in-out"
                       src={val.hoverImg}
                       alt={val.hoverImg}
                       loading="lazy"
-                      width="400"
-                      height="400"
+
                     />
                   </a>
 
-                  <div className="text-start">
+                  <div className="text-center">
                     <a href="">
                       <span className="text-sm hover:border-b border-[#7646D7] text-slate-600">
                         {val.title}
@@ -249,7 +248,7 @@ const Home = () => {
                     </a>
                   </div>
 
-                  <div className="text-start">
+                  <div className="text-center">
                     <a href="">
                       <p className="text-slate-900 ">{val.price}</p>
                     </a>
