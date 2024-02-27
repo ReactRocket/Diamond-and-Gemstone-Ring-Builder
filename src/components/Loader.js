@@ -1,6 +1,6 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 
-const Loader = ({isLoading}) => {
+const Loader = ({ isLoading }) => {
   useEffect(() => {
     document.querySelector("body").style.overflow = "hidden";
 
@@ -16,8 +16,8 @@ const Loader = ({isLoading}) => {
   }, [isLoading]);
 
   return (
-    <div className="z-50 h-full w-screen  bg-opacity-35 fixed top-0 left-0  flex justify-center items-center">
-      <span className=" w-[100px] aspect-square border-transparent  rounded-full border-[6px] animate-spin border-t-[#7646D7]"></span>
+    <div className="transition-all duration-1000 z-50 h-full w-screen  bg-opacity-35 fixed top-0 left-0  flex justify-center items-center">
+      <span className=" w-[100px] aspect-square delay-1000 border-transparent  rounded-full border-[6px] animate-spin border-t-[#7646D7]"></span>
     </div>
   );
 };
