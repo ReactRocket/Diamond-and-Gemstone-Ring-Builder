@@ -6,7 +6,7 @@ const ProductList = ({ data }) => {
 
   return (
     <>
-      {modalToggle && <View360Modal setModalToggle={setModalToggle} />}
+      {modalToggle && <View360Modal modalToggle={modalToggle} setModalToggle={setModalToggle} />}
       <div className="min-h-[10vh] w-full mt-5">
         {data?.length > 0 ? (
           <ul className="grid grid-cols-4 gap-5">
