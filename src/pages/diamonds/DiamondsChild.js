@@ -163,7 +163,7 @@ const DiamondsChild = () => {
 
   return (
     <>
-      {modalToggle && <View360Modal setModalToggle={setModalToggle} />}
+      {modalToggle && <View360Modal modalToggle={modalToggle} setModalToggle={setModalToggle} />}
       <div className="mx-auto w-[95%]">
         {/* section-1 of breadcrum */}
         <Breadcrumb />

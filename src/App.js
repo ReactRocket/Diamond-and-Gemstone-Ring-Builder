@@ -30,7 +30,7 @@ const App = () => {
       <div className="min-h-[15vh]">
         <Header />
       </div>
-      {isLoading && <Loader />}
+      {isLoading && <Loader isLoading={isLoading} />}
       <div className="min-h-[35vh]">
         <Routes>
           <Route path="/" element={<Home />} />
