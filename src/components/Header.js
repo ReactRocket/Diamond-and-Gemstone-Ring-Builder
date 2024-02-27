@@ -28,7 +28,7 @@ const Header = () => {
   
   return (
     <>
-      <header className="w-full h-[15vh]  ">
+      <header className="w-full h-[15vh] ">
         <div className="h-1/3 w-full bg-[#FFFFFF] border-b flex justify-center items-center">
           <h1 className="text-sm font-serif  text-[#333641]">
             Welcome to our store
@@ -52,7 +52,7 @@ const Header = () => {
               </div>
             </div>
           </Link>
-          <nav className=" h-full  w-1/3 ">
+          <nav className=" h-full  w-1/3 sticky top-0 z-50 ">
             <ul className="flex  justify-around items-center h-full w-full font-light">
               {menuList?.map((val, i) => {
                 return (
