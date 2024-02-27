@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const Error = () => {
-  const [Timer, setTimer] = useState(10);
+  const [Timer, setTimer] = useState(5);
   const location = useLocation();
   const navigate = useNavigate();
 
