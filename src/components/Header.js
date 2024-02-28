@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import KI_LOGO from "../assets/images/header/KI_LOGO.png";
 import AllFilters from "./AllFilters";
+import SearchBar from "./SearchBar";
 
 const menuList = [
   {
@@ -23,7 +24,21 @@ const menuList = [
 ];
 
 const Header = () => {
+  const [SearchModal, setSearchModal] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleBodyOverflow = () => {
+      document.querySelector("body").style.overflowY = "scroll";
+      document.querySelector("body").style.overflowX = "hidden";
+      document.querySelector("body").style.scrollBehavior = "smooth";
+    };
+    if (SearchModal) {
+      document.querySelector("body").style.overflow = "hidden";
+    } else {
+      handleBodyOverflow();
+    }
+  }, [SearchModal]);
 
   return (
     <>
@@ -71,7 +86,7 @@ const Header = () => {
           </nav>
           <section className=" h-full w-1/3 flex justify-end items-center">
             <ul className="flex justify-center items-center gap-5">
-              <Link>
+              <Link onClick={() => setSearchModal(!SearchModal)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -84,7 +99,6 @@ const Header = () => {
                 </svg>
               </Link>
               <Link to={"/cart"}>
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -100,6 +114,26 @@ const Header = () => {
           </section>
         </div>
       </header>
+
+      {/* search modal  */}
+      {SearchModal && (
+        <div className="z-50 fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-50">
+          <div className=" w-full h-[20vh] bg-white flex justify-center items-center gap-3">
+            <SearchBar />
+            <svg
+              onClick={() => setSearchModal(false)}
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-x-lg cursor-pointer "
+              viewBox="0 0 16 16"
+            >
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+          </div>
+        </div>
+      )}
     </>
   );
 };
