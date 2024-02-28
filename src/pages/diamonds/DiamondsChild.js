@@ -15,6 +15,7 @@ import fair from "./assets/images/Cut Grade/fair-poor-cut.svg";
 import good from "./assets/images/Cut Grade/good-cut.svg";
 import ideal from "./assets/images/Cut Grade/ideal-excellent-cut.svg";
 import verygood from "./assets/images/Cut Grade/verygood-cuts.svg";
+import MiniSlider from "../../components/MiniSlider";
 
 const diamondInformationArray = [
   { SKU: "132FA4FITLRIQQD" },
@@ -163,7 +164,12 @@ const DiamondsChild = () => {
 
   return (
     <>
-      {modalToggle && <View360Modal modalToggle={modalToggle} setModalToggle={setModalToggle} />}
+      {modalToggle && (
+        <View360Modal
+          modalToggle={modalToggle}
+          setModalToggle={setModalToggle}
+        />
+      )}
       <div className="mx-auto w-[95%]">
         {/* section-1 of breadcrum */}
         <Breadcrumb />
@@ -239,7 +245,7 @@ const DiamondsChild = () => {
                   </ul>
                 </span>
                 <div className=" h-5 w-3/5 mt-4  flex    justify-start">
-                  <a className="flex gap-3 justify-start border-b-2 border-b-violet-400   cursor-pointer">
+                  <a className="flex gap-3 justify-start    cursor-pointer">
                     <svg
                       className=""
                       stroke="currentColor"
@@ -255,7 +261,7 @@ const DiamondsChild = () => {
                     <div className="relative inline-block">
                       <a
                         href="javascript:void(0)"
-                        className=" text-gray-500 group-hover:text-gray-600"
+                        className=" text-gray-500 group-hover:text-gray-600 underline-offset-2 underline decoration-[#7646D7]"
                         onMouseEnter={() => setShowFreeShippingTooltip(true)}
                         onMouseLeave={() => setShowFreeShippingTooltip(false)}
                       >
@@ -276,7 +282,7 @@ const DiamondsChild = () => {
                     <div className="relative inline-block">
                       <a
                         href="javascript:void(0)"
-                        className="text-gray-500 group-hover:text-gray-600"
+                        className="text-gray-500 group-hover:text-gray-600 underline-offset-2 underline decoration-[#7646D7] "
                         onMouseEnter={() => setShowReturnTooltip(true)}
                         onMouseLeave={() => setShowReturnTooltip(false)}
                       >
@@ -505,12 +511,15 @@ const DiamondsChild = () => {
                 ) : val.title === "Color Grade" ? (
                   <article className="w-full h-[25vh] ">
                     <div className="w-full h-full ">
-                      <div className="h-1/3 w-full border-b border-[#CCCCCC]   flex justify-between items-end">
+                      <div className="relative h-1/3 w-full border-b border-[#CCCCCC]   flex justify-between items-end">
                         <hr className="border border-[#CCCCCC]  h-3 " />
                         <hr className="border border-[#CCCCCC]  h-3 " />
                         <hr className="border border-[#CCCCCC]  h-3 " />
                         <hr className="border border-[#CCCCCC]  h-3 " />
+
+                        <MiniSlider left={0} top={83} />
                       </div>
+
                       <ul className="flex h-2/3 w-full bg-[#EBE2FB] bg-gradient-to-r from-white via-blue-byor-color to-blue-byor-color">
                         {val.data.map((val, index) => {
                           return (
@@ -528,9 +537,6 @@ const DiamondsChild = () => {
                         })}
                         <hr className="border border-[#CCCCCC]  h-3 " />
                       </ul>
-                    </div>
-                    <div class="grade-positon grade-positon-J text-red-600">
-                      grade-positon
                     </div>
                   </article>
                 ) : val.title === "Cut Grade" ? (
@@ -551,13 +557,32 @@ const DiamondsChild = () => {
                 ) : (
                   <article className="w-full h-[25vh] ">
                     <div className="w-full h-full ">
-                      <div className="h-1/3 w-full border-b border-[#CCCCCC]   flex justify-between items-end">
-                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
-                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
-                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
-                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
-                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
-                        <hr key={index} className="border border-[#CCCCCC]  h-3 "/>
+                      <div className="relative h-1/3 w-full border-b border-[#CCCCCC]   flex justify-between items-end">
+                        <hr
+                          key={index}
+                          className="border border-[#CCCCCC]  h-3 "
+                        />
+                        <hr
+                          key={index}
+                          className="border border-[#CCCCCC]  h-3 "
+                        />
+                        <hr
+                          key={index}
+                          className="border border-[#CCCCCC]  h-3 "
+                        />
+                        <hr
+                          key={index}
+                          className="border border-[#CCCCCC]  h-3 "
+                        />
+                        <hr
+                          key={index}
+                          className="border border-[#CCCCCC]  h-3 "
+                        />
+                        <hr
+                          key={index}
+                          className="border border-[#CCCCCC]  h-3 "
+                        />
+                        <MiniSlider left={0} top={83} />
                       </div>
                       <ul className="flex h-2/3 w-full bg-[#EBE2FB] bg-gradient-to-r from-white via-blue-byor-color to-blue-byor-color">
                         {val.data.map((val, index) => {
