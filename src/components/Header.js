@@ -25,7 +25,6 @@ const menuList = [
 const Header = () => {
   const location = useLocation();
 
-  
   return (
     <>
       <header className="w-full h-[15vh] ">
@@ -72,30 +71,31 @@ const Header = () => {
           </nav>
           <section className=" h-full w-1/3 flex justify-end items-center">
             <ul className="flex justify-center items-center gap-5">
-              <li>
+              <Link>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
                   fill="currentColor"
-                  className="bi bi-search"
+                  className="bi bi-search hover:fill-[#5724C5]  scale-90 hover:scale-100 transition-all duration-500 cursor-pointer"
                   viewBox="0 0 16 16"
                 >
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                 </svg>
-              </li>
-              <li>
+              </Link>
+              <Link to={"/cart"}>
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
                   fill="currentColor"
-                  className="bi bi-bag"
+                  className="bi bi-bag hover:fill-[#5724C5] scale-90 hover:scale-100 transition-all duration-500 cursor-pointer"
                   viewBox="0 0 16 16"
                 >
                   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
                 </svg>
-              </li>
+              </Link>
             </ul>
           </section>
         </div>
