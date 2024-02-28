@@ -9,6 +9,7 @@ import Diamonds from "./pages/diamonds/Diamonds";
 import Gemstone from "./pages/gemstone/Gemstone";
 import Engagement from "./pages/engagement/Engagement";
 import DiamondsChild from "./pages/diamonds/DiamondsChild";
+import Cart from "./pages/cart/Cart";
 import { Error } from "./pages/error/Error";
 import Test from "./_test/Test";
 import Loader from "./components/Loader";
@@ -52,6 +53,7 @@ const App = () => {
           <Route path="/diamonds/products" element={<DiamondsChild />} />
           <Route path="/gemstones" element={<Gemstone />} />
           <Route path="/engagement" element={<Engagement />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<Error />} />
         </Routes>

@@ -1,15 +1,13 @@
 import React from "react";
-import DoubleRangeSlider from "../components/Slider";
+import SearchBar from "../components/SearchBar";
 
 const Test = () => {
-  const handleRangeChange = (newRange) => {
-    // Handle the updated range values here
-    console.log("New range:", newRange);
-  };
   return (
-    <div>
-      <h1>Test Mode</h1>
-      <DoubleRangeSlider />
+    <div className="h-screen w-screen flex justify-center items-center">
+      <div>
+        <h1>Test Mode</h1>
+        <SearchBar />
+      </div>
     </div>
   );
 };
