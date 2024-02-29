@@ -14,14 +14,14 @@ const MiniSlider = ({ left, right, top, bottom }) => {
       top-[${top && (top || 0)}%]
       bottom-[${
         bottom && (bottom || 0)
-      }%] absolute  w-full  z-0 bg-[#7C3AED] overflow-visible flex justify-center items-center max-h-[20px] max-w-[10%]`}
+      }%] absolute  w-full  z-0 bg-[#7C3AED] overflow-visible flex justify-center items-center max-h-[10px] max-w-[10%]`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30px"
-        height="30px"
+        width="22px"
+        height="22px"
         fill="white"
-        class="z-10 bi bi-circle-fill border rounded-full border-gray-600"
+        class="z-10 bi bi-circle-fill border rounded-full border-[#7C3AED]"
         viewBox="0 0 16 16"
       >
         <circle cx="8" cy="8" r="8" />

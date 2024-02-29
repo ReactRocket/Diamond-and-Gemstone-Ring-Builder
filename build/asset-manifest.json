@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ff70850d.css",
-    "main.js": "/static/js/main.a00072e0.js",
+    "main.css": "/static/css/main.7b771fec.css",
+    "main.js": "/static/js/main.cbca0192.js",
     "static/js/592.e290abcb.chunk.js": "/static/js/592.e290abcb.chunk.js",
     "static/media/Sample1.jpg": "/static/media/Sample1.a3ba75dd4dd908d0108e.jpg",
     "static/media/Thumb1.jpg": "/static/media/Thumb1.a3ba75dd4dd908d0108e.jpg",
@@ -46,12 +46,12 @@
     "static/media/5.svg": "/static/media/5.5e70faa3b2bac5998e11ff5a11dcedd1.svg",
     "index.html": "/index.html",
     "static/media/round-diamond-1.webp": "/static/media/round-diamond-1.ebfe31c54ca5915f937e.webp",
-    "main.ff70850d.css.map": "/static/css/main.ff70850d.css.map",
-    "main.a00072e0.js.map": "/static/js/main.a00072e0.js.map",
+    "main.7b771fec.css.map": "/static/css/main.7b771fec.css.map",
+    "main.cbca0192.js.map": "/static/js/main.cbca0192.js.map",
     "592.e290abcb.chunk.js.map": "/static/js/592.e290abcb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff70850d.css",
-    "static/js/main.a00072e0.js"
+    "static/css/main.7b771fec.css",
+    "static/js/main.cbca0192.js"
   ]
 }
