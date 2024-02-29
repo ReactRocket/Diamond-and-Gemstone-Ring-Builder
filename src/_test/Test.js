@@ -1,14 +1,15 @@
 import React from "react";
-import SearchBar from "../components/SearchBar";
+import ProductChild from "../components/ProductChild";
+
 
 const Test = () => {
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
+    // <div className="h-screen w-screen flex justify-center items-center">
       <div>
-        <h1>Test Mode</h1>
-        <SearchBar />
+        {/* <h1>Test Mode</h1> */}
+        <ProductChild/>
       </div>
-    </div>
+    // </div>
   );
 };
 

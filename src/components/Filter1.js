@@ -10,7 +10,7 @@ const Filter1 = () => {
         className="h-[8%] w-full  flex p-2"
        
       >
-        <div className="h-[8%] w-[50%] flex gap-4">
+        <div className="h-[8%] w-[50%] text-slate-600 flex gap-4">
           <label>Filter:</label>
           <details
             className="relative pr-5"
@@ -66,7 +66,7 @@ const Filter1 = () => {
           {/* for Price */}
           <details className="relative pr-5 ">
             <summary className="flex">
-              <span className="text-slate-500 cursor-pointer hover:underline flex gap-2 justify-center items-center">
+              <span className="text-slate-400 cursor-pointer hover:underline flex gap-2 justify-center items-center">
                 {" "}
                 Price
                 <svg
