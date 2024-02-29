@@ -28,13 +28,13 @@ const Header = () => {
   
   return (
     <>
-      <header className="w-full h-[15vh] ">
+      <header className="w-full h-[15vh] fixed top-0 z-50 bg-white">
         <div className="h-1/3 w-full bg-[#FFFFFF] border-b flex justify-center items-center">
           <h1 className="text-sm font-serif  text-[#333641]">
             Welcome to our store
           </h1>
         </div>
-        <div className="h-2/3 border-b  flex justify-center items-center px-10  gap-5">
+        <div className="h-2/3 border-b  flex justify-center items-center px-10  gap-5 ">
           <Link
             to="/"
             className=" h-full w-1/3 flex gap-2  justify-center items-center "

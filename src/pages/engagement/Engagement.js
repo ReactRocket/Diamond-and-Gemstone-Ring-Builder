@@ -5,6 +5,7 @@ import Diamond3 from "../home/assets/images/card/Diamond3/Diamond3.webp";
 import Diamond4 from "../home/assets/images/card/Diamond4/Diamond4.webp";
 
 import Breadcrumb from "../../components/Breadcrumb";
+import Filter1 from "../../components/Filter1";
 const featuredProductsListArray = [
   {
     img: Diamond1,
@@ -87,7 +88,7 @@ const featuredProductsListArray = [
 
 const Engagement = ({ data }) => {
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full px-20">
       {/* section 1 */}
       <div>
         <Breadcrumb />
@@ -97,12 +98,10 @@ const Engagement = ({ data }) => {
         </h1>
       </div>
 
-      <div className="min-h-[100vh] w-full">
+      <div className="min-h-[100vh] w-full px-10">
         {/* fist Section */}
-        <div className="h-[10%] w-full bg-blue-400">
 
-        </div>
-
+        <Filter1 />
         {/* section section */}
 
         <div className="p-10 py-8  h-[85%] w-full ">
@@ -112,7 +111,7 @@ const Engagement = ({ data }) => {
                 <li key={index}>
                   <a href="">
                     <img
-                      className="p-3 w-72 h-10vh hover:scale-105 object-scale-down transition-all duration-500"
+                      className="p-3 w-96 h-12vh hover:scale-105 object-scale-down transition-all duration-500"
                       src={val.img}
                       alt={val.img}
                       loading="lazy"
