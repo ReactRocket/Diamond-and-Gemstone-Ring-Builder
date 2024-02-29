@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useEffect } from "react";
 
 const View360Modal = ({ modalToggle, src, setModalToggle }) => {
@@ -16,8 +17,8 @@ const View360Modal = ({ modalToggle, src, setModalToggle }) => {
   }, [modalToggle]);
 
   return (
-    <div className="z-30 fixed top-0 h-screen w-screen bg-gray-900 bg-opacity-50 flex justify-center items-center ">
-      <div className="z-50 h-[80%] w-[55%] rounded-xl bg-white">
+    <div className="z-50 fixed top-0 left-0 h-screen w-screen bg-gray-900 bg-opacity-50 flex justify-center items-center ">
+      <div className="z-50 h-[80%] min-w-[55%] rounded-xl bg-white">
         <div className="w-full h-[5%] pt-5  flex justify-end items-center px-5 ">
           <img
             onClick={() => setModalToggle && setModalToggle(false)}
