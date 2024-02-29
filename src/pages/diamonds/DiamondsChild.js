@@ -8,7 +8,6 @@ import diamond_carat from "./assets/images/round-diamond-1.webp";
 
 import { Link } from "react-router-dom";
 import View360Modal from "../../components/View360Modal";
-import { getCaratPosition } from "../../utils/global.functions";
 import Tooltip from "../../components/Tooltip";
 
 import fair from "./assets/images/Cut Grade/fair-poor-cut.svg";
@@ -150,17 +149,42 @@ const diamond_carat_array = [
 ];
 
 const DiamondsChild = () => {
-  const [modalToggle, setModalToggle] = useState(false);
-  const [position, setPosition] = useState(0);
-
   const [showFreeShippingTooltip, setShowFreeShippingTooltip] = useState(false);
   const [showReturnTooltip, setShowReturnTooltip] = useState(false);
+  const [modalToggle, setModalToggle] = useState(false);
+  const [position, setPosition] = useState({
+    caratPosition: 71, // -5 to 87
+    colorPosition: 0, // 0 to 90
+    cutPosition: 100,
+    clarityPosition: 20, // 0 to 90
+  });
 
-  useEffect(() => {
-    const test = getCaratPosition(1);
-    // setPosition(test);
-    console.log(test);
-  }, []);
+  const calculateCaratPosition = (value) => {};
+  const calculateColorPosition = (value) => {
+    const positionMap = {
+      D: 0,
+      E: 10,
+      F: 20,
+      G: 27.5,
+      H: 35,
+      I: 42.5,
+      J: 50,
+      K: 70,
+      L: 80,
+      M: 90,
+    };
+
+    const colorPosition = positionMap[value] || 0;
+    setPosition({ ...position, colorPosition });
+  };
+
+  const calculateCutPosition = (value) => {};
+  const calculateClarityPosition = (value) => {};
+
+  // useEffect(() => {
+  //   calculateColorPosition("F");
+  //   console.log(position);
+  // }, []);
 
   return (
     <>
@@ -504,7 +528,7 @@ const DiamondsChild = () => {
                       <Tooltip
                         text="Your Diamond"
                         value={val.value}
-                        position={-5}
+                        position={position.caratPosition}
                       />
                     </div>
                   </article>
@@ -517,7 +541,7 @@ const DiamondsChild = () => {
                         <hr className="border border-[#CCCCCC]  h-3 " />
                         <hr className="border border-[#CCCCCC]  h-3 " />
 
-                        <MiniSlider left={0} top={90} />
+                        <MiniSlider left={position.colorPosition} top={90} />
                       </div>
 
                       <ul className="flex h-2/3 w-full bg-[#EBE2FB] bg-gradient-to-r from-white via-blue-byor-color to-blue-byor-color">
@@ -582,7 +606,7 @@ const DiamondsChild = () => {
                           key={index}
                           className="border border-[#CCCCCC]  h-3 "
                         />
-                        <MiniSlider left={0} top={90} />
+                        <MiniSlider left={position.clarityPosition} top={90} />
                       </div>
                       <ul className="flex h-2/3 w-full bg-[#EBE2FB] bg-gradient-to-r from-white via-blue-byor-color to-blue-byor-color">
                         {val.data.map((val, index) => {

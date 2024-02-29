@@ -24,6 +24,8 @@ const menuList = [
 ];
 
 const Header = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
   const [SearchModal, setSearchModal] = useState(false);
   const location = useLocation();
 
@@ -40,9 +42,24 @@ const Header = () => {
     }
   }, [SearchModal]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isVisible = prevScrollPos > currentScrollPos;
+
+      setPrevScrollPos(currentScrollPos);
+      setVisible(isVisible);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   return (
     <>
-      <header className="w-full h-[15vh] fixed top-0 z-50 bg-white">
+      <header className=" w-full h-[15vh]  bg-white">
         <div className="h-1/3 w-full bg-[#FFFFFF] border-b flex justify-center items-center">
           <h1 className="text-sm font-serif  text-[#333641]">
             Welcome to our store
@@ -66,7 +83,7 @@ const Header = () => {
               </div>
             </div>
           </Link>
-          <nav className=" h-full  w-1/3 sticky top-0 z-50 ">
+          <nav className=" h-full  w-1/3  ">
             <ul className="flex  justify-around items-center h-full w-full font-light">
               {menuList?.map((val, i) => {
                 return (
