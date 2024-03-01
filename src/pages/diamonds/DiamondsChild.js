@@ -17,6 +17,7 @@ import ideal from "./assets/images/Cut Grade/ideal-excellent-cut.svg";
 import verygood from "./assets/images/Cut Grade/verygood-cuts.svg";
 import MiniSlider from "../../components/MiniSlider";
 
+
 const diamondInformationArray = [
   { SKU: "132FA4FITLRIQQD" },
   { Shape: "Round" },
@@ -223,7 +224,7 @@ const DiamondsChild = () => {
               </div>
             </div>
 
-            <div className="h-full w-[50%]">
+            <div className="h-full w-[50%] ">
               <div>
                 <h1 className="text-3xl mt-6 justify-start flex text-[#7646D7] ">
                   2.09 Carat D-VVS1 Round Cut Diamond
@@ -303,7 +304,7 @@ const DiamondsChild = () => {
                   </span>
                 </div>
 
-                <div className=" mt-4 h-5 w-3/4">
+                <div className=" mt-4 h-5 w-3/4 ">
                   <div className=" flex gap-2 justify-start items-center">
                     <svg
                       className=""
@@ -393,7 +394,7 @@ const DiamondsChild = () => {
         </div>
 
         {/* section - 3 Product Description */}
-        <div className="min-h-[70vh] w-full">
+        <div className="min-h-[70vh] w-full ">
           <div className="h-10 w-full ">
             <p className="text-2xl text-[#242833]">Product Description</p>
           </div>
