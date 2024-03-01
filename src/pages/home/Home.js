@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import serviceImg_1 from "./assets/images/services/1.svg";
 import serviceImg_2 from "./assets/images/services/2.svg";
@@ -177,36 +178,39 @@ const Home = () => {
             "URL('//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/banner-image.png?v=1703593688&amp;width=3840')",
         }}
       >
-        <div class=" absolute w-full h-full  flex  flex-col items-end justify-center gap-3 px-14">
-          <Link
-            to="/diamonds"
-            className=" h-1/6 w-1/6  bg-[#7646D7]  hover:bg-[#8357DB]  text-white flex justify-around items-center"
-          >
-            <Link to="/diamonds" className="text-center">
-              {" "}
-              Start with a Diamond
-            </Link>
+        <div class=" absolute w-full  h-full  flex  flex-col items-end justify-center  px-16">
+          <div className="flex justify-around items-center flex-col w-1/5 h-[40%] gap-3 ">
+            <Link
+              to="/diamonds"
+              className=" h-1/2 w-full   bg-[#7646D7]  hover:bg-[#8357DB]  text-white flex justify-center gap-2 items-center"
+            >
+              <Link to="/diamonds" className="text-center">
+                {" "}
+                Start with a Diamond
+              </Link>
 
-            <img
-              src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/diamond.svg?v=565506956968303593"
-              width="30px"
-              height="30px"
-            />
-          </Link>
-          <Link
-            to="/engagement"
-            className=" h-1/6 w-1/6 bg-[#7646D7] hover:bg-[#8357DB]  text-white flex justify-around items-center"
-          >
-            <Link to="/engagement" className="text-center">
-              {" "}
-              Start with a Ring
+              <img
+                src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/diamond.svg?v=565506956968303593"
+                width="30px"
+                height="30px"
+                alt="down arrow icon"
+              />
             </Link>
-            <img
-              src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/ring.svg?v=14615646449345528242"
-              width="30px"
-              height="30px"
-            />
-          </Link>
+            <Link
+              to="/engagement"
+              className="  h-1/2 w-full   bg-[#7646D7] hover:bg-[#8357DB]  text-white flex justify-center gap-3 items-center"
+            >
+              <Link to="/engagement" className="text-center">
+                {" "}
+                Start with a Ring
+              </Link>
+              <img
+                src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/ring.svg?v=14615646449345528242"
+                width="25px"
+                height="25px"
+              />
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -236,7 +240,6 @@ const Home = () => {
                       src={val.hoverImg}
                       alt={val.hoverImg}
                       loading="lazy"
-
                     />
                   </a>
 
