@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ring1 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1.webp";
 import ring2 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1_hover.webp";
 import View360Modal from "./View360Modal";
+import ZoomView from "./ZoomView";
 
 const shapes_array = [
   "Round",
@@ -35,6 +36,7 @@ const share = () => {
 const ProductChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
   const [zoomButtonToggle, setZoomButtonToggle] = useState(false);
+  const [zoomViewToggle, setZoomViewToggle] = useState(false);
   const [showImage, setShowImage] = useState(0);
 
   return (
@@ -43,6 +45,13 @@ const ProductChild = () => {
         <View360Modal
           modalToggle={modalToggle}
           setModalToggle={setModalToggle}
+        />
+      )}
+      {zoomViewToggle && (
+        <ZoomView
+          data={[ring1, ring2, ring1]}
+          setZoomViewToggle={setZoomViewToggle}
+          zoomViewToggle={zoomViewToggle}
         />
       )}
       <div className="mx-auto w-[95%] px-24">
@@ -61,7 +70,11 @@ const ProductChild = () => {
           <div className=" flex h-full w-full ">
             <div className="h-full  w-[45%]  p-2 flex    ">
               <div className=" gap-2  w-1/5 flex flex-col ">
-                <button className={` ${showImage === 0 && "border-violet-400 border-2"} w-20 border focus:border-violet-400 focus:border-2 aspect-square`}>
+                <button
+                  className={` ${
+                    showImage === 0 && "border-violet-400 border-2"
+                  } w-20 border focus:border-violet-400 focus:border-2 aspect-square`}
+                >
                   <img
                     className="h-full w-full object-cover cursor-pointer"
                     src={ring1}
@@ -103,6 +116,7 @@ const ProductChild = () => {
                 onMouseLeave={() => setZoomButtonToggle(false)}
               >
                 <span
+                  onClick={() => setZoomViewToggle(true)}
                   className={` ${
                     zoomButtonToggle ? "visible" : "hidden"
                   } cursor-pointer absolute  rounded-full flex justify-center border border-slate-200 items-center p-2 top-3 left-3`}
@@ -159,7 +173,7 @@ const ProductChild = () => {
                       className="w-24  gap-5  border border-violet-500 hover:bg-violet-200 focus:bg-[#8357DB] focus:text-white  flex justify-center items-center  "
                       key={index}
                     >
-               {val}
+                      {val}
                     </button>
                   );
                 })}
