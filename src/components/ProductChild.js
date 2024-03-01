@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ring1 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1.webp";
 import ring2 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1_hover.webp";
+import View360Modal from "./View360Modal";
 
 const shapes_array = [
   "Round",
@@ -24,23 +25,30 @@ const share = () => {
         text: "Check out this shared content!",
         url: window.location.href,
       })
-      
+
       .catch((error) => {
         console.error("Error sharing:", error);
       });
-  } 
-  
+  }
 };
 
 const ProductChild = () => {
+  const [modalToggle, setModalToggle] = useState(false);
+
   return (
     <>
+      { modalToggle &&(
+        <View360Modal
+          modalToggle={modalToggle}
+          setModalToggle={setModalToggle}
+        />
+      ) }
       <div className="mx-auto w-[95%] px-24">
         <div className="w-full  h-6 py-8 flex flex-row justify-between  items-center">
           <Link to="/diamonds">
             <span className="text-xs underline ">BACK TO COLLECTION</span>
           </Link>
-         
+
           <Link to="/diamonds">
             <span className="text-xs underline ">START OVER</span>
           </Link>
@@ -51,40 +59,47 @@ const ProductChild = () => {
           <div className=" flex h-full w-full ">
             <div className="h-full  w-[45%]  p-2 flex    ">
               <div className=" gap-2  w-1/5 flex flex-col ">
-                <div className="  w-20 border  aspect-square">
+                <button className="w-20 border focus:border-violet-400 focus:border-2 aspect-square">
                   <img
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover cursor-pointer"
                     src={ring1}
                     alt="product image"
                   />
-                </div>
-                <div className=" w-20 border  aspect-square">
+                </button>
+                <button className=" w-20 border aspect-square focus:border-violet-400 focus:border-2">
                   <img
-                    className="h-full w-full object-cover"
+                    className="h-full   cursor-pointer w-full object-cover"
                     src={ring2}
                     alt="product image"
                   />
-                </div>{" "}
-                <div className=" w-20 border aspect-square">
+                </button>{" "}
+                <button className=" w-20 border aspect-square focus:border-violet-400 focus:border-2">
                   <img
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover cursor-pointer"
                     src={ring1}
                     alt="product image"
                   />
-                </div>
-                <div className=" w-20 border aspect-square">
+                </button>
+                <button
+                  className=" w-20 border aspect-square cursor-pointer focus:border-violet-400 focus:border-2"
+                  
+                >
                   <img
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover "
                     src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/360-view-icon.svg?v=9898701996318623333"
                     class="video-360"
+                    // onClick={() => setModalToggle(true)}
+                    onClick={()=>{
+                      setModalToggle(true)
+                    }}
                   />
-                </div>
+                </button>
               </div>
 
               {/* main img */}
               <div className="min-h-full w-4/5 border">
                 <img
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover cursor-pointer"
                   src={ring1}
                   alt="product image"
                 />
@@ -142,9 +157,11 @@ const ProductChild = () => {
                   </p>
                 </div>
                 <div className="h-10 w-full flex  justify-start items-center">
-                  <button className="flex gap-3 justify-center items-center" onClick={share}>
+                  <button
+                    className="flex gap-3 justify-center items-center"
+                    onClick={share}
+                  >
                     <svg
-                   
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
@@ -155,7 +172,7 @@ const ProductChild = () => {
                       <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
                       <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
                     </svg>
-                    <span className="border-b-2 border-transparent hover:border-b-purple-500 text-[#7646D7] ">
+                    <span className="border-b-2  border-transparent hover:border-b-purple-500 text-[#7646D7] ">
                       Share
                     </span>
                   </button>
