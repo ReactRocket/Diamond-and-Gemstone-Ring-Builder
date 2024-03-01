@@ -15,7 +15,7 @@ import good from "./assets/images/Cut Grade/good-cut.svg";
 import ideal from "./assets/images/Cut Grade/ideal-excellent-cut.svg";
 import verygood from "./assets/images/Cut Grade/verygood-cuts.svg";
 import MiniSlider from "../../components/MiniSlider";
-
+import Filter2 from "../../components/Filter2";
 
 const diamondInformationArray = [
   { SKU: "132FA4FITLRIQQD" },
@@ -199,15 +199,7 @@ const DiamondsChild = () => {
         {/* section-1 of breadcrum */}
         <Breadcrumb />
 
-        <div className="w-full  h-6 pt-8 flex flex-row justify-between  items-center">
-          <Link to="/diamonds">
-            <span className="text-xs underline ">BACK TO COLLECTION</span>
-          </Link>
-          <Link to="/diamonds">
-            <span className="text-xs underline">START OVER</span>
-          </Link>
-          <span>&nbsp;</span>
-        </div>
+        <Filter2 />
 
         {/* section-2 of diamond preview  */}
         <div className=" p-20  min-h-[50vh] w-full">
