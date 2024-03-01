@@ -61,7 +61,7 @@ const ProductChild = () => {
           <div className=" flex h-full w-full ">
             <div className="h-full  w-[45%]  p-2 flex    ">
               <div className=" gap-2  w-1/5 flex flex-col ">
-                <button className={` ${showImage === 0 && "border-violet-400"} w-20 border focus:border-violet-400 focus:border-2 aspect-square`}>
+                <button className={` ${showImage === 0 && "border-violet-400 border-2"} w-20 border focus:border-violet-400 focus:border-2 aspect-square`}>
                   <img
                     className="h-full w-full object-cover cursor-pointer"
                     src={ring1}
@@ -159,7 +159,7 @@ const ProductChild = () => {
                       className="w-24  gap-5  border border-violet-500 hover:bg-violet-200 focus:bg-[#8357DB] focus:text-white  flex justify-center items-center  "
                       key={index}
                     >
-                      <span className="">{val}</span>
+               {val}
                     </button>
                   );
                 })}
