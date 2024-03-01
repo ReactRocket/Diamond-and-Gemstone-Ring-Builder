@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { Link } from "react-router-dom";
 import ring1 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1.webp";
 import ring2 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1_hover.webp";
@@ -34,15 +34,17 @@ const share = () => {
 
 const ProductChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
+  const [zoomButtonToggle, setZoomButtonToggle] = useState(false);
+
 
   return (
     <>
-      { modalToggle &&(
+      {modalToggle && (
         <View360Modal
           modalToggle={modalToggle}
           setModalToggle={setModalToggle}
         />
-      ) }
+      )}
       <div className="mx-auto w-[95%] px-24">
         <div className="w-full  h-6 py-8 flex flex-row justify-between  items-center">
           <Link to="/diamonds">
@@ -80,24 +82,45 @@ const ProductChild = () => {
                     alt="product image"
                   />
                 </button>
-                <button
-                  className=" w-20 border aspect-square cursor-pointer focus:border-violet-400 focus:border-2"
-                  
-                >
+                <button className=" w-20 border aspect-square cursor-pointer focus:border-violet-400 focus:border-2">
                   <img
                     className="h-full w-full object-cover "
                     src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/360-view-icon.svg?v=9898701996318623333"
-                    class="video-360"
+                    // className="video-360"
                     // onClick={() => setModalToggle(true)}
-                    onClick={()=>{
-                      setModalToggle(true)
+                    onClick={() => {
+                      setModalToggle(true);
                     }}
                   />
                 </button>
               </div>
 
               {/* main img */}
-              <div className="min-h-full w-4/5 border">
+              <div
+                className="min-h-full w-4/5 border relative"
+                onMouseEnter={() => setZoomButtonToggle(true)}
+                onMouseLeave={() => setZoomButtonToggle(false)}
+              >
+                <span className={` ${zoomButtonToggle ? "visible" : "hidden"} cursor-pointer absolute  rounded-full flex justify-center border border-slate-200 items-center p-2 top-3 left-3`}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                    class="bi bi-zoom-in"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
+                    />
+                    <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </span>
                 <img
                   className="h-full w-full object-cover cursor-pointer"
                   src={ring1}
@@ -156,7 +179,7 @@ const ProductChild = () => {
                     a continuous stream of scintillating
                   </p>
                 </div>
-                <div className="h-10 w-full flex  justify-start items-center">
+                <div className="h-10 w-full flex py-10  justify-start items-center">
                   <button
                     className="flex gap-3 justify-center items-center"
                     onClick={share}
@@ -166,7 +189,7 @@ const ProductChild = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-upload text-[#7646D7]"
+                      className="bi bi-upload text-[#7646D7]"
                       viewBox="0 0 16 16"
                     >
                       <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
