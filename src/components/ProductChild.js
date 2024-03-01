@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ring1 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1.webp";
 import ring2 from "../../src/pages/home/assets/images/card/Diamond1/Diamond1_hover.webp";
@@ -35,7 +35,7 @@ const share = () => {
 const ProductChild = () => {
   const [modalToggle, setModalToggle] = useState(false);
   const [zoomButtonToggle, setZoomButtonToggle] = useState(false);
-
+  const [showImage, setShowImage] = useState(0);
 
   return (
     <>
@@ -61,11 +61,12 @@ const ProductChild = () => {
           <div className=" flex h-full w-full ">
             <div className="h-full  w-[45%]  p-2 flex    ">
               <div className=" gap-2  w-1/5 flex flex-col ">
-                <button className="w-20 border focus:border-violet-400 focus:border-2 aspect-square">
+                <button className={` ${showImage === 0 && "border-violet-400"} w-20 border focus:border-violet-400 focus:border-2 aspect-square`}>
                   <img
                     className="h-full w-full object-cover cursor-pointer"
                     src={ring1}
                     alt="product image"
+                    onClick={() => setShowImage(0)}
                   />
                 </button>
                 <button className=" w-20 border aspect-square focus:border-violet-400 focus:border-2">
@@ -73,6 +74,7 @@ const ProductChild = () => {
                     className="h-full   cursor-pointer w-full object-cover"
                     src={ring2}
                     alt="product image"
+                    onClick={() => setShowImage(1)}
                   />
                 </button>{" "}
                 <button className=" w-20 border aspect-square focus:border-violet-400 focus:border-2">
@@ -80,14 +82,13 @@ const ProductChild = () => {
                     className="h-full w-full object-cover cursor-pointer"
                     src={ring1}
                     alt="product image"
+                    onClick={() => setShowImage(2)}
                   />
                 </button>
                 <button className=" w-20 border aspect-square cursor-pointer focus:border-violet-400 focus:border-2">
                   <img
                     className="h-full w-full object-cover "
                     src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/360-view-icon.svg?v=9898701996318623333"
-                    // className="video-360"
-                    // onClick={() => setModalToggle(true)}
                     onClick={() => {
                       setModalToggle(true);
                     }}
@@ -101,7 +102,11 @@ const ProductChild = () => {
                 onMouseEnter={() => setZoomButtonToggle(true)}
                 onMouseLeave={() => setZoomButtonToggle(false)}
               >
-                <span className={` ${zoomButtonToggle ? "visible" : "hidden"} cursor-pointer absolute  rounded-full flex justify-center border border-slate-200 items-center p-2 top-3 left-3`}>
+                <span
+                  className={` ${
+                    zoomButtonToggle ? "visible" : "hidden"
+                  } cursor-pointer absolute  rounded-full flex justify-center border border-slate-200 items-center p-2 top-3 left-3`}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -123,7 +128,9 @@ const ProductChild = () => {
                 </span>
                 <img
                   className="h-full w-full object-cover cursor-pointer"
-                  src={ring1}
+                  src={
+                    showImage === 0 ? ring1 : showImage === 1 ? ring2 : ring1
+                  }
                   alt="product image"
                 />
               </div>
