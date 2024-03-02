@@ -109,30 +109,26 @@ const Engagement = ({ data }) => {
           <ul className="relative grid  gap-6 grid-cols-4">
             {featuredProductsListArray?.map((val, index) => {
               return (
-                <li key={index}>
-                  <Link to="/engagement/products">
+                <Link to="/engagement/products">
+                  <li key={index}>
                     <img
                       className="p-3 w-96 h-12vh hover:scale-105 object-scale-down transition-all duration-500"
                       src={val.img}
                       alt={val.img}
                       loading="lazy"
                     />
-                  </Link>
 
-                  <div className=" text-center">
-                    <Link href="/engagement/products">
+                    <div className=" text-center">
                       <span className="text-sm text-center  hover:border-b border-[#7646D7] text-slate-600">
                         {val.title}
                       </span>
-                    </Link>
-                  </div>
+                    </div>
 
-                  <div className="text-center">
-                    <Link to="/engagement/products">
+                    <div className="text-center">
                       <p className="text-slate-900 ">{val.price}</p>
-                    </Link>
-                  </div>
-                </li>
+                    </div>
+                  </li>
+                </Link>
               );
             })}
           </ul>
