@@ -1,27 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ProductFilter = () => {
+  const [activeToggle, setactiveToggle] = useState(0);
+  const [activeListToggle, setactiveListToggle] = useState(0);
   return (
     <div className=" w-full min-h-[20vh] flex flex-col gap-10">
       <section className="h-1/2   w-full flex justify-center items-center ">
         <article className="w-1/2 h-full flex justify-start text-[#4A4A4A] items-center gap-10">
-          <button className="p-3  bg-[#EBE2FB] ">
+          <button
+            onClick={() => setactiveToggle(0)}
+            className={`p-3  bg-[${
+              activeToggle === 0 ? "#EBE2FB" : "#EFEFEF"
+            }] `}
+          >
             <span>All Diamonds (50)</span>
           </button>
-          <button className="p-3  bg-[#EFEFEF] ">
+          <button
+            onClick={() => setactiveToggle(1)}
+            className={`p-3  bg-[${
+              activeToggle === 1 ? "#EBE2FB" : "#EFEFEF"
+            }] `}
+          >
             <span>Recently Viewed (1)</span>
           </button>
-          <button className="p-3  bg-[#EFEFEF] ">Comparison (0)</button>
+          <button
+            onClick={() => setactiveToggle(2)}
+            className={`p-3  bg-[${
+              activeToggle === 2 ? "#EBE2FB" : "#EFEFEF"
+            }] `}
+          >
+            Comparison (0)
+          </button>
         </article>
+
         <article className="w-1/2  h-full flex justify-end items-center gap-5">
-          <button className="w-14 aspect-square bg-[#EBE2FB] p-2">
+          <button
+            onClick={() => setactiveListToggle(0)}
+            className={`w-14 aspect-square bg-[${
+              activeListToggle === 0 ? "#EBE2FB" : "#EFEFEF"
+            }] p-2`}
+          >
             <img
               className="aspect-square object-cover"
               src="https://cdn.shopify.com/extensions/0d0cf04f-e3c1-4fff-91e0-5e8724dd4e13/diamond-ring-builder-jewelry-453/assets/grid-view-icon.svg"
               alt=""
             />
           </button>
-          <button className="w-14 bg-[#EFEFEF] aspect-square p-2">
+          <button
+            onClick={() => setactiveListToggle(1)}
+            className={`w-14 bg-[${
+              activeListToggle === 1 ? "#EBE2FB" : "#EFEFEF"
+            }] aspect-square p-2`}
+          >
             <img
               className="aspect-square object-cover"
               src="https://cdn.shopify.com/extensions/0d0cf04f-e3c1-4fff-91e0-5e8724dd4e13/diamond-ring-builder-jewelry-453/assets/list-view-icon.svg"
@@ -34,6 +64,7 @@ const ProductFilter = () => {
         <article className="w-1/2  h-full">
           <span>Showing 50 Results</span>
         </article>
+
         <article className="w-1/2  h-full flex justify-end items-center gap-5">
           <div className="min-w-1/3  flex justify-center items-center">
             <input

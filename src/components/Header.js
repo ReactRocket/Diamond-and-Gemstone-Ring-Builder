@@ -89,10 +89,10 @@ const Header = () => {
                 return (
                   <li
                     key={i}
-                    className={`hover:border-b-2 hover:border-b-[#5724C5] ${
+                    className={`decoration-1 hover:underline hover:underline-offset-4  hover:decoration-[#5724C5] ${
                       location.pathname === val.to &&
                       // "underline underline-offset-8"
-                      "border-b-2 border-b-[#5724C5]"
+                      " decoration-[#5724C5] underline underline-offset-4 decoration-1 hover:decoration-2 "
                     }`}
                   >
                     <Link to={val.to}> {val.title}</Link>
