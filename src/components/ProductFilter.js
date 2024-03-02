@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ProductFilter = () => {
-  const [activeToggle, setactiveToggle] = useState(0);
-  const [activeListToggle, setactiveListToggle] = useState(0);
+const ProductFilter = ({
+  activeToggle,
+  setActiveToggle,
+  activeListToggle,
+  setActiveListToggle,
+}) => {
   return (
     <div className=" w-full min-h-[20vh] flex flex-col gap-10">
       <section className="h-1/2   w-full flex justify-center items-center ">
         <article className="w-1/2 h-full flex justify-start text-[#4A4A4A] items-center gap-10">
           <button
-            onClick={() => setactiveToggle(0)}
+            onClick={() => setActiveToggle(0)}
             className={`p-3  bg-[${
               activeToggle === 0 ? "#EBE2FB" : "#EFEFEF"
             }] `}
@@ -16,7 +19,7 @@ const ProductFilter = () => {
             <span>All Diamonds (50)</span>
           </button>
           <button
-            onClick={() => setactiveToggle(1)}
+            onClick={() => setActiveToggle(1)}
             className={`p-3  bg-[${
               activeToggle === 1 ? "#EBE2FB" : "#EFEFEF"
             }] `}
@@ -24,7 +27,7 @@ const ProductFilter = () => {
             <span>Recently Viewed (1)</span>
           </button>
           <button
-            onClick={() => setactiveToggle(2)}
+            onClick={() => setActiveToggle(2)}
             className={`p-3  bg-[${
               activeToggle === 2 ? "#EBE2FB" : "#EFEFEF"
             }] `}
@@ -33,9 +36,12 @@ const ProductFilter = () => {
           </button>
         </article>
 
-        <article className="w-1/2  h-full flex justify-end items-center gap-5">
+        <article
+          style={activeToggle ? { visibility: "hidden" } : {}}
+          className="w-1/2  h-full flex justify-end items-center gap-5"
+        >
           <button
-            onClick={() => setactiveListToggle(0)}
+            onClick={() => setActiveListToggle(0)}
             className={`w-14 aspect-square bg-[${
               activeListToggle === 0 ? "#EBE2FB" : "#EFEFEF"
             }] p-2`}
@@ -47,7 +53,7 @@ const ProductFilter = () => {
             />
           </button>
           <button
-            onClick={() => setactiveListToggle(1)}
+            onClick={() => setActiveListToggle(1)}
             className={`w-14 bg-[${
               activeListToggle === 1 ? "#EBE2FB" : "#EFEFEF"
             }] aspect-square p-2`}
@@ -65,7 +71,10 @@ const ProductFilter = () => {
           <span>Showing 50 Results</span>
         </article>
 
-        <article className="w-1/2  h-full flex justify-end items-center gap-5">
+        <article
+          style={activeToggle ? { visibility: "hidden" } : {}}
+          className="w-1/2  h-full flex justify-end items-center gap-5"
+        >
           <div className="min-w-1/3  flex justify-center items-center">
             <input
               type="text"
