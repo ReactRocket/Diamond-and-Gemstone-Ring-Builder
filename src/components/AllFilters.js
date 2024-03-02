@@ -6,6 +6,9 @@ import img2 from "../assets/images/breadcrum_icons/diamond.png";
 import img3 from "../assets/images/breadcrum_icons/engagement-ring.png";
 import ProductFilter from "./ProductFilter";
 import ProductList from "./ProductList";
+import RecentlyViewed from "./RecentlyViewed";
+import Comparison from "./Comparison";
+import TableView from "./TableView";
 
 const data = [
   {
@@ -64,6 +67,8 @@ const productListArray = [
 ];
 const AllFilters = () => {
   const [advanceFilterToggle, setAdvanceFilterToggle] = useState(false);
+  const [activeToggle, setActiveToggle] = useState(0);
+  const [activeListToggle, setActiveListToggle] = useState(0);
 
   return (
     <div className="px-10 pb-10">
@@ -105,8 +110,21 @@ const AllFilters = () => {
           <span> Reset All</span>{" "}
         </span>
       </div>
-      <ProductFilter />
-      <ProductList data={productListArray} />
+      <ProductFilter
+        activeToggle={activeToggle}
+        setActiveToggle={setActiveToggle}
+        activeListToggle={activeListToggle}
+        setActiveListToggle={setActiveListToggle}
+      />
+      {activeToggle === 1 ? (
+        <RecentlyViewed data={productListArray} />
+      ) : activeToggle === 2 ? (
+        <Comparison data={"Comparison"} />
+      ) : activeListToggle ? (
+        <TableView />
+      ) : (
+        <ProductList data={productListArray} />
+      )}
     </div>
   );
 };
