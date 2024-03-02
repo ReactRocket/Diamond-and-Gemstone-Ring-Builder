@@ -227,37 +227,38 @@ const Home = () => {
             {featuredProductsListArray?.map((val, index) => {
               return (
                 <Link to="/engagement/products">
-                <li key={index}>
-                  <a href="">
-                    <img
-                      className="p-3 w-full h-full"
-                      src={val.img}
-                      alt={val.img}
-                      loading="lazy"
-                    />
-
-                    <img
-                      className="w-1/4 h-[80%] absolute top-0 opacity-0   hover:opacity-100 transition-all duration-500 ease-in-out"
-                      src={val.hoverImg}
-                      alt={val.hoverImg}
-                      loading="lazy"
-                    />
-                  </a>
-
-                  <div className="text-center">
+                
+                 
+                  <li key={index} className="relative group w-full">
                     <a href="">
-                      <span className="text-sm hover:border-b border-[#7646D7] text-slate-600">
-                        {val.title}
-                      </span>
+                      <img
+                        className="p-3 w-full h-full transition-opacity duration-500 ease-in-out"
+                        src={val.img}
+                        alt={val.img}
+                        loading="lazy"
+                      />
+                      <img
+                        className="w-full h-[80%] absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+                        src={val.hoverImg}
+                        alt={val.hoverImg}
+                        loading="lazy"
+                      />
                     </a>
-                  </div>
 
-                  <div className="text-center">
-                    <a href="">
-                      <p className="text-slate-900 ">{val.price}</p>
-                    </a>
-                  </div>
-                </li>
+                    <div className="text-center">
+                      <a href="">
+                        <span className="text-sm group-hover:border-b border-[#7646D7] text-slate-600">
+                          {val.title}
+                        </span>
+                      </a>
+                    </div>
+
+                    <div className="text-center">
+                      <a href="">
+                        <p className="text-slate-900 ">{val.price}</p>
+                      </a>
+                    </div>
+                  </li>
                 </Link>
               );
             })}

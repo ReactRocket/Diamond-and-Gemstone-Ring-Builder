@@ -89,9 +89,9 @@ const featuredProductsListArray = [
 
 const Engagement = ({ data }) => {
   return (
-    <div className="h-full w-full px-20">
+    <div className="min-h-[100vh] w-full px-20 overflow-hidden">
       {/* section 1 */}
-      <div>
+      <div className="h-full">
         <Breadcrumb />
 
         <h1 className="text-[#7646D7] text-4xl font-sans p-10">
@@ -99,7 +99,7 @@ const Engagement = ({ data }) => {
         </h1>
       </div>
 
-      <div className="min-h-[100vh] w-full px-10">
+      <div className="h-full w-full px-10">
         {/* fist Section */}
 
         <Filter1 />
@@ -110,16 +110,16 @@ const Engagement = ({ data }) => {
             {featuredProductsListArray?.map((val, index) => {
               return (
                 <Link to="/engagement/products">
-                  <li key={index}>
+                  <li key={index} className="relative group w-full overflow-hidden truncate scale-100">
                     <img
-                      className="p-3 w-96 h-12vh hover:scale-105 object-scale-down transition-all duration-500"
+                      className="p-3 w-96 h-12vh group-hover:scale-105 object-scale-down transition-all duration-500"
                       src={val.img}
                       alt={val.img}
                       loading="lazy"
                     />
 
                     <div className=" text-center">
-                      <span className="text-sm text-center  hover:border-b border-[#7646D7] text-slate-600">
+                      <span className="text-xs  text-center whitespace-nowrap  group-hover:border-b border-[#7646D7] text-slate-700">
                         {val.title}
                       </span>
                     </div>
