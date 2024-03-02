@@ -15,6 +15,8 @@ import Test from "./_test/Test";
 import Loader from "./components/Loader";
 import { backToTopScreen } from "./utils/global.functions";
 import ScrollToTop from "./components/ScrollToTop";
+import ProductChild from "./components/ProductChild";
+import EngagementChild from "./pages/engagement/EngagementChild";
 
 // Define the App component
 const App = () => {
@@ -53,8 +55,12 @@ const App = () => {
           <Route path="/diamonds/products" element={<DiamondsChild />} />
           <Route path="/gemstones" element={<Gemstone />} />
           <Route path="/engagement" element={<Engagement />} />
+          <Route path="/engagement/products" element={<EngagementChild/>} />
+
           <Route path="/cart" element={<Cart />} />
           <Route path="/test" element={<Test />} />
+
+
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

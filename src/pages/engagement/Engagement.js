@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Diamond1 from "../home/assets/images/card/Diamond1/Diamond1.webp";
 import Diamond2 from "../home/assets/images/card/Diamond2/Diamond2.webp";
 import Diamond3 from "../home/assets/images/card/Diamond3/Diamond3.webp";
@@ -109,27 +110,27 @@ const Engagement = ({ data }) => {
             {featuredProductsListArray?.map((val, index) => {
               return (
                 <li key={index}>
-                  <a href="">
+                  <Link to="/engagement/products">
                     <img
                       className="p-3 w-96 h-12vh hover:scale-105 object-scale-down transition-all duration-500"
                       src={val.img}
                       alt={val.img}
                       loading="lazy"
                     />
-                  </a>
+                  </Link>
 
                   <div className=" text-center">
-                    <a href="">
+                    <Link href="/engagement/products">
                       <span className="text-sm text-center  hover:border-b border-[#7646D7] text-slate-600">
                         {val.title}
                       </span>
-                    </a>
+                    </Link>
                   </div>
 
                   <div className="text-center">
-                    <a href="">
+                    <Link to="/engagement/products">
                       <p className="text-slate-900 ">{val.price}</p>
-                    </a>
+                    </Link>
                   </div>
                 </li>
               );
