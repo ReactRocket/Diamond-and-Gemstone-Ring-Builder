@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      boxShadow: {
+        'y': '0px 4px 6px -1px rgba(0, 0, 0, 0.3)',
+      },
       keyframes: {
         // wave: {
         //   "0%": { transform: "rotate(0.0deg)" },

@@ -87,7 +87,7 @@ const AdvancedFilter = ({ advanceFilterToggle }) => {
   };
 
   return (
-    <div className="min-h-[40vh] lg:min-h-[40vh] transition-transform duration-1000 ease-linear w-full  shadow-md shadow-black flex justify-center items-center p-5 ">
+    <div className="min-h-[40vh] lg:min-h-[40vh] transition-transform duration-1000 ease-linear w-full  shadow-  flex justify-center items-center p-5 shadow-y">
       {/* range filters */}
       <div className="grid  w-full h-full lg:grid-cols-2 grid-cols-1 gap-5">
         {advancedFilterList1?.map((val, index) => {
