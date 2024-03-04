@@ -71,13 +71,13 @@ const AllFilters = () => {
   const [activeListToggle, setActiveListToggle] = useState(0);
 
   return (
-    <div className="px-10 pb-10">
+    <div className=" p-5">
       <Breadcrumb data={data} />
       <div className=" flex justify-center items-center py-7 w-full">
-        <button className="w-1/4 bg-[#6d3bae] border-[#6d3bae] border-2 text-white p-2">
+        <button className="w-1/3 bg-[#834ace] border-[#834ace] border shadow-lg  text-white p-2">
           MINED
         </button>
-        <button className="w-1/4 border-[#6d3bae] border-2 p-2">
+        <button className="w-1/3 border-[#834ace] border shadow-lg   p-2">
           LAB CREATED
         </button>
       </div>
