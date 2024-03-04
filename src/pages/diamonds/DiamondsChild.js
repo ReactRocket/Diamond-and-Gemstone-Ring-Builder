@@ -16,7 +16,7 @@ import ideal from "./assets/images/Cut Grade/ideal-excellent-cut.svg";
 import verygood from "./assets/images/Cut Grade/verygood-cuts.svg";
 import MiniSlider from "../../components/MiniSlider";
 import Filter2 from "../../components/Filter2";
-import img1 from '../home/assets/images/card/Diamond2/Diamond2.webp'
+import img1 from "../home/assets/images/card/Diamond2/Diamond2.webp";
 
 const diamondInformationArray = [
   { SKU: "132FA4FITLRIQQD" },
@@ -208,24 +208,38 @@ const DiamondsChild = () => {
           <div className=" flex h-[50vh]  w-full">
             <div className="h-full  w-[50%] p-2 flex gap-1   ">
               <div className=" space-y-5  w-[19%]">
-                <button className=" h-20 w-20 border-2 border-violet-400  cursor-pointer hover:border-violet-400 focus:border-violet-400 focus:border-2">
-                  <img src={Thumb1} 
-                   onClick={() => setShowImage(0)}
-                  />
+                <button
+                  className={`${
+                    showImage === 0 && " border-2 border-violet-400"
+                  } h-20 w-20   cursor-pointer hover:border-violet-400 focus:border-violet-400 focus:border-2`}
+                >
+                  <img src={Thumb1} onClick={() => setShowImage(0)} />
                 </button>
-                <button className=" border  h-20 w-20 cursor-pointer hover:border-violet-400  focus:border-violet-400 focus:border-2">
-                  <img src={img1}
-                   onClick={() => setShowImage(1)}
-                  />
+                <button
+                  className={` ${
+                    showImage === 1 && " border-2 border-violet-400"
+                  }
+                border  h-20 w-20 cursor-pointer hover:border-violet-400  focus:border-violet-400 focus:border-2 
+                `}
+                >
+                  <img src={img1} onClick={() => setShowImage(1)} />
                 </button>
 
-                <button className=" h-20 w-20 cursor-pointer hover:border-violet-400  focus:border-violet-400 focus:border-2">
-                  <img src={Thumb1}
-                   onClick={() => setShowImage(2)} />
+                <button
+                  className={`${
+                    showImage === 2 && " border-2 border-violet-400"
+                  } h-20 w-20   cursor-pointer hover:border-violet-400 focus:border-violet-400 focus:border-2`}
+                >
+                  <img src={Thumb1} onClick={() => setShowImage(2)} />
                 </button>
               </div>
               <div className="  h-[full] w-[71%]">
-                <img className="h-full w-full object-cover" src={showImage === 0 ? Thumb1 : showImage  === 1 ? img1 : sample1} />
+                <img
+                  className="h-full w-full object-cover"
+                  src={
+                    showImage === 0 ? Thumb1 : showImage === 1 ? img1 : sample1
+                  }
+                />
                 <span
                   // to={data.view360 || "/"}
                   onClick={() => setModalToggle(true)}

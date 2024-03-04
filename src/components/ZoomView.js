@@ -30,7 +30,8 @@ const ZoomView = ({ data, setZoomViewToggle, zoomViewToggle }) => {
             <img
               src={val}
               alt={val}
-              className="h-full w-full object-contain cursor-zoom-in"
+              className="h-full w-full object-contain cursor-zoom-out"
+              title="Zoom Out"
             />
           </div>
         );

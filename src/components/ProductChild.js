@@ -34,10 +34,16 @@ const share = () => {
 };
 
 const ProductChild = () => {
+
+  
+
   const [modalToggle, setModalToggle] = useState(false);
   const [zoomButtonToggle, setZoomButtonToggle] = useState(false);
   const [zoomViewToggle, setZoomViewToggle] = useState(false);
   const [showImage, setShowImage] = useState(0);
+
+
+  
 
   return (
     <>
@@ -70,6 +76,7 @@ const ProductChild = () => {
           <div className=" flex h-full w-full ">
             <div className="h-full  w-[45%]  p-2 flex    ">
               <div className=" gap-2  w-1/5 flex flex-col ">
+           
                 <button
                   className={` ${
                     showImage === 0 && "border-violet-400 border-2"
@@ -84,7 +91,10 @@ const ProductChild = () => {
                 </button>
                 <button className=" w-20 border aspect-square focus:border-violet-400 focus:border-2">
                   <img
-                    className="h-full   cursor-pointer w-full object-cover"
+                    className={`
+                    ${
+                      showImage === 1 && "border-violet-400 border"
+                    } "h-full   cursor-pointer w-full object-cover"`}
                     src={ring2}
                     alt="product image"
                     onClick={() => setShowImage(1)}
@@ -92,13 +102,16 @@ const ProductChild = () => {
                 </button>{" "}
                 <button className=" w-20 border aspect-square focus:border-violet-400 focus:border-2">
                   <img
-                    className="h-full w-full object-cover cursor-pointer"
+                    className={` ${ 
+                      showImage === 2  && "border-violet-400 border"
+                    }
+                    "h-full w-full object-cover cursor-pointer"`}
                     src={ring1}
                     alt="product image"
                     onClick={() => setShowImage(2)}
                   />
                 </button>
-                <button className=" w-20 border aspect-square cursor-pointer focus:border-violet-400 focus:border-2">
+                <button className=" w-20 border aspect-square cursor-pointer">
                   <img
                     className="h-full w-full object-cover "
                     src="//diamond-search-gemstone-byor-ring-builder-keyideas.myshopify.com/cdn/shop/files/360-view-icon.svg?v=9898701996318623333"
@@ -116,6 +129,7 @@ const ProductChild = () => {
                 onMouseLeave={() => setZoomButtonToggle(false)}
               >
                 <span
+                 title=" clicked here to zoom-in"
                   onClick={() => setZoomViewToggle(true)}
                   className={` ${
                     zoomButtonToggle ? "visible" : "hidden"
@@ -128,6 +142,8 @@ const ProductChild = () => {
                     fill="currentColor"
                     class="bi bi-zoom-in"
                     viewBox="0 0 16 16"
+                   
+                  
                   >
                     <path
                       fill-rule="evenodd"
