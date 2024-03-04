@@ -215,11 +215,21 @@ const DiamondsChild = () => {
                 >
                   <img src={Thumb1} onClick={() => setShowImage(0)} />
                 </button>
-                <button className=" border  h-20 w-20 cursor-pointer hover:border-violet-400  focus:border-violet-400 focus:border-2">
+                <button
+                  className={` ${
+                    showImage === 1 && " border-2 border-violet-400"
+                  }
+                border  h-20 w-20 cursor-pointer hover:border-violet-400  focus:border-violet-400 focus:border-2 
+                `}
+                >
                   <img src={img1} onClick={() => setShowImage(1)} />
                 </button>
 
-                <button className=" h-20 w-20 cursor-pointer hover:border-violet-400  focus:border-violet-400 focus:border-2">
+                <button
+                  className={`${
+                    showImage === 2 && " border-2 border-violet-400"
+                  } h-20 w-20   cursor-pointer hover:border-violet-400 focus:border-violet-400 focus:border-2`}
+                >
                   <img src={Thumb1} onClick={() => setShowImage(2)} />
                 </button>
               </div>
