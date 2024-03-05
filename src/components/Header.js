@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import KI_LOGO from "../assets/images/header/KI_LOGO.png";
 import AllFilters from "./AllFilters";
 import SearchBar from "./SearchBar";
+import SideMenu from "./SideMenu";
 
 const menuList = [
   {
@@ -26,6 +27,7 @@ const menuList = [
 const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
+  const [menuToggle, setMenuToggle] = useState(false);
   const [SearchModal, setSearchModal] = useState(false);
   const location = useLocation();
 
@@ -35,12 +37,12 @@ const Header = () => {
       document.querySelector("body").style.overflowX = "hidden";
       document.querySelector("body").style.scrollBehavior = "smooth";
     };
-    if (SearchModal) {
+    if (SearchModal || menuToggle) {
       document.querySelector("body").style.overflow = "hidden";
     } else {
       handleBodyOverflow();
     }
-  }, [SearchModal]);
+  }, [SearchModal, menuToggle]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,10 +67,40 @@ const Header = () => {
             Welcome to our store
           </h1>
         </div>
-        <div className="h-2/3 border-b  flex justify-center items-center px-10  gap-5 ">
+        <div className="h-2/3 border-b  flex justify-center items-center px-5 lg:px-10  gap-5 ">
+          <div className="w-1/4 lg:hidden flex justify-start items-center">
+            <button onClick={() => setMenuToggle(!menuToggle)}>
+              {menuToggle ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
           <Link
             to="/"
-            className=" h-full w-1/3 flex gap-2  justify-center items-center "
+            className=" h-full w-1/2 lg:w-1/3 flex gap-2  justify-center items-center "
           >
             <div className="w-1/2 text-right flex justify-center items-center border-r-black border-r">
               <p className="font-bold text-sm text-[#5724C5]">
@@ -83,7 +115,7 @@ const Header = () => {
               </div>
             </div>
           </Link>
-          <nav className=" h-full  w-1/3  ">
+          <nav className=" h-full  w-1/3 hidden lg:block ">
             <ul className="flex  justify-around items-center h-full w-full font-light">
               {menuList?.map((val, i) => {
                 return (
@@ -101,7 +133,7 @@ const Header = () => {
               })}
             </ul>
           </nav>
-          <section className=" h-full w-1/3 flex justify-end items-center">
+          <section className=" h-full w-1/4 lg:w-1/3 flex justify-end items-center">
             <ul className="flex justify-center items-center gap-5">
               <Link onClick={() => setSearchModal(!SearchModal)}>
                 <svg
@@ -131,6 +163,9 @@ const Header = () => {
           </section>
         </div>
       </header>
+      <div className="relative">
+        {menuToggle && <SideMenu data={menuList}  setMenuToggle={setMenuToggle} path={location.pathname} />}
+      </div>
 
       {/* search modal  */}
       {SearchModal && (

@@ -8,7 +8,7 @@ const Footer = () => {
           <h1 className="text-[#4F149A] font-bold text-3xl">
             Discuss your ideas. Connect now!
           </h1>
-          <ul className="flex justify-left items-center gap-5 text-[#4F149A] font-semibold">
+          <ul className="flex flex-col lg:flex-row justify-left items-start lg:items-center gap-5 text-[#4F149A] font-semibold">
             <li className=" flex justify-right items-center gap-3">
               <span className="border-2 border-[#4F149A] p-1 rounded-full">
                 <svg
@@ -64,7 +64,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-1/4 flex justify-center items-end pb-20">
+        <div className="w-1/4 flex justify-center items-end pb-20 lg:pr-0 pr-10 ">
           <ul className="flex justify-center items-center gap-7 text-[#4F149A]">
             <li className="bg-white p-2  rounded-full">
               <a href="https://www.linkedin.com/company/keyideas-infotech-p-limited/" target="_blank" rel="noopener noreferrer">
