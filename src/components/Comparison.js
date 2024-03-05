@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -24,7 +25,6 @@ const ComparisonDataArray = [
     "L/W Ratio": "1",
     Lab: "IGI",
   },
-
 ];
 
 const Comparison = () => {
