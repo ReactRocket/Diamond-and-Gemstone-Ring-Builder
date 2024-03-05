@@ -1,22 +1,12 @@
 import React, { useState } from "react";
 
 const Filter1 = () => {
- 
-
-  
   return (
     <>
-      <div
-        className="h-[8%] w-full  flex p-2"
-       
-      >
+      <div className="h-[8%] w-full  flex p-2">
         <div className="h-[8%] w-[50%] text-slate-600 flex gap-4">
           <label>Filter:</label>
-          <details
-            className="relative pr-5"
-            
-            
-          >
+          <details className="relative pr-5">
             <summary className="flex">
               <span className=" cursor-pointer hover:underline text-slate-400 flex gap-2 justify-center items-center">
                 {" "}

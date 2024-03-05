@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SideMenu = ({ data, path , setMenuToggle}) => {
+const SideMenu = ({ data, path, setMenuToggle }) => {
   return (
-    <div className="absolute top-0 left-0 z-50 h-[85vh] w-screen  bg-gray-900 bg-opacity-65 transition-transform duration-1000 delay-700 ease-in-out">
+    <div className="absolute top-0 left-0 z-50 h-[85vh] w-screen lg:hidden  bg-gray-900 bg-opacity-65 transition-transform duration-1000 delay-700 ease-in-out">
       <div className="h-full w-1/2">
         <div className="w-full h-[80%] bg-white py-5">
           <ul className="flex flex-col gap-1">
             {data?.map((val, index) => {
               return (
                 <li
-                onClick={()=> setMenuToggle(false)}
+                  onClick={() => setMenuToggle(false)}
                   key={index}
                   className={`p-2 px-4 ${
                     path === val.to ? "bg-gray-100" : "bg-white"
@@ -24,24 +24,46 @@ const SideMenu = ({ data, path , setMenuToggle}) => {
         </div>
         <div className="w-full h-[20%] bg-gray-100">
           <div className="h-1/2 w-full flex justify-start items-center px-10">
-            <details className="">
-              <summary className="hover:underline cursor-pointer">
-                USD $ | India
-              </summary>
-              <div>
-                <ul>
-                  <li>a</li>
-                  <li>a</li>
-                  <li>a</li>
-                  <li>a</li>
-                  <li>a</li>
-                  <li>a</li>
-                  <li>a</li>
-                </ul>
-              </div>
-            </details>
+            <select className="bg-gray-100 hover:underline text-slate-500  w-[23%] cursor-pointer">
+              <option value="USD $ | Australia">USD $ | Australia </option>
+              <option value="USD $ | Austria">USD $ | Austria</option>
+              <option value="USD $ | Belgium">USD $ | Belgium</option>
+              <option value="USD $ | Canada">USD $ | Canada</option>
+              <option value="USD $ | Czechia">USD $ | Czechia</option>
+              <option value="USD $ | Denmark">USD $ | Denmark</option>
+              <option value="USD $ | Finland">USD $ | Finland</option>
+              <option value="USD $ | France">USD $ | France</option>
+              <option value="USD $ | Germany">USD $ | Germany</option>
+              <option value="USD $ | Hong">USD $ | Hong Kong SAR</option>
+              <option value="USD $ | India">USD $ | India</option>
+              <option value="USD $ | Ireland">USD $ | Ireland</option>
+              <option value="USD $ | Israel">USD $ | Israel</option>
+              <option value="USD $ | Italy">USD $ | Italy</option>
+              <option value="USD $ | Japan">USD $ | Japan</option>
+              <option value="USD $ | Malaysia">USD $ | Malaysia</option>
+              <option value="USD $ | Netherlands">USD $ | Netherlands</option>
+              <option value="USD $ | New">USD $ | New Zealand</option>
+              <option value="USD $ | Norway">USD $ | Norway</option>
+              <option value="USD $ | Poland">USD $ | Poland</option>
+              <option value="USD $ | Portugal">USD $ | Portugal</option>
+              <option value="USD $ | Singapore">USD $ | Singapore</option>
+              <option value="USD $ | South">USD $ | South Korea</option>
+              <option value="USD $ | Spain">USD $ | Spain</option>
+              <option value="USD $ | Sweden">USD $ | Sweden</option>
+              <option value="USD $ | Switzerland">USD $ | Switzerland</option>
+              <option value="USD $ | United Arab Emirates">
+                USD $ | United Arab Emirates
+              </option>
+              <option value="USD $ | United Kingdom">
+                USD $ | United Kingdom
+              </option>
+              <option value="USD $ | United States">
+                USD $ | United States
+              </option>
+            </select>
           </div>
-          <div className="h-1/2 w-full flex justify-start items-center px-10">
+
+          <div className="h-1/2 w-full flex justify-start items-center px-10 ">
             <span className="flex gap-5">
               <a
                 href="http://twitter.com"
