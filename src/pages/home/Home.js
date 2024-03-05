@@ -222,8 +222,8 @@ const Home = () => {
         <div className="h-[15%]">
           <h1 className="text-3xl  font-semibold">Featured products</h1>
         </div>
-        <div className="mt-4 h-[85%] w-full ">
-          <ul className="relative flex gap-6">
+        <div className="mt-4 h-[85%] w-full     ">
+          <ul className="relative grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1  ">
             {featuredProductsListArray?.map((val, index) => {
               return (
                 <Link to="/engagement/products">

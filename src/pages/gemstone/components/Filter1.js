@@ -1,4 +1,4 @@
-import React , {useState}from "react";
+import React, { useState } from "react";
 import Breadcrumb from "../../../components/Breadcrumb";
 import yellowgem from "../assets/images/filter1/YELLOW.svg";
 import pinkgem from "../assets/images/filter1/PINK.svg";
@@ -23,10 +23,11 @@ import pear from "../../../../src/assets/images/diamond_shapes/pear.svg";
 import princess from "../../../../src/assets/images/diamond_shapes/princess.svg";
 import radiant from "../../../../src/assets/images/diamond_shapes/radiant.svg";
 import round from "../../../../src/assets/images/diamond_shapes/round.svg";
-import Slider from "../../../components/Slider";
+
 import ProductFilter from "../../../components/ProductFilter";
-import DiamondsChild from "../../diamonds/DiamondsChild";
+
 import ProductList from "../../../components/ProductList";
+import Slider from "../../../components/Slider";
 
 const gemsArray = [
   {
@@ -165,25 +166,39 @@ const Filter1 = () => {
 
           <div className="h-[63%] mt-3 ">
             {/* for first section */}
-            <div className="h-full w-[50%] flex gap-10 items-center  -mt-10 px-2 ">
-              <label className="">Shapes</label>
+            <div className="h-full w-[50%]  flex flex-col gap-6  px-5 ">
+              <div className="flex items-center gap-6">
+                <label className="">Shapes</label>
 
-              <ul className="flex gap-3 py-2">
-                {shapesArray?.map((val, index) => {
-                  return (
-                    <li key={index} className="h-[10%]">
-                      <img className="" src={val} />
-                    </li>
-                  );
-                })}
-              </ul>
-              {/* <Slider/> */}
+                <ul className="flex gap-3 py-2">
+                  {shapesArray?.map((val, index) => {
+                    return (
+                      <li key={index} className="h-[10%]">
+                        <img className="" src={val} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div className=" w-full justify-between  gap-5 flex  ">
+                <label className="">Carat</label>
+                <Slider
+                  dataArray={""}
+                  min={0.31}
+                  max={8.6}
+                  onChange={({ min, max }) =>
+                    console.log(`min = ${min}, max = ${max}`)
+                  }
+                />
+              </div>
             </div>
 
             {/* for second section */}
-            {/* <div className="h-full w-[50%] ">
-
-            </div> */}
+            <div className="h-full w-[50%] ">
+                  
+                  
+            </div>
           </div>
         </div>
 
@@ -224,7 +239,7 @@ const Filter1 = () => {
           )} */}
         </div>
         <div className="h-full w-full">
-          <ProductList data={productListArray}/>
+          <ProductList data={productListArray} />
         </div>
       </div>
     </>
