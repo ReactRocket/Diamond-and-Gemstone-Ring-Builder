@@ -37,41 +37,46 @@ const App = () => {
 
   // Render the application
   return (
-    <div className=" h-screen w-screen bg-white ">
-      {/* Render the header */}
-      <div className="min-h-[15vh]">
-        <Header />
-      </div>
-      {/* Render the loader if the application is loading and the testing flag is not set */}
-      {!localStorage.getItem("testing") && isLoading && (
-        <Loader isLoading={isLoading} />
-      )}
-
-      {/* Render the main content of the application */}
-      <div className="min-h-[35vh]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/diamonds" element={<Diamonds />} />
-          <Route path="/diamonds/products" element={<DiamondsChild />} />
-          <Route path="/gemstones" element={<Gemstone />} />
-          <Route path="/engagement" element={<Engagement />} />
-          <Route path="/engagement/products" element={<EngagementChild/>} />
-
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/test" element={<Test />} />
-
-
-          <Route path="*" element={<Error />} />
-        </Routes>
+    <>
+      <div className="lg:hidden h-screen w-screen flex justify-center items-center">
+        <h1 className="text-xl">Please open in desktop or laptop.</h1>
       </div>
 
-      {/* Render the footer */}
-      <div className="min-h-[50vh]">
-        <ScrollToTop />
+      <div className="hidden lg:block h-screen w-screen bg-white ">
+        {/* Render the header */}
+        <div className="min-h-[15vh]">
+          <Header />
+        </div>
+        {/* Render the loader if the application is loading and the testing flag is not set */}
+        {!localStorage.getItem("testing") && isLoading && (
+          <Loader isLoading={isLoading} />
+        )}
 
-        <Footer />
+        {/* Render the main content of the application */}
+        <div className="min-h-[35vh]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/diamonds" element={<Diamonds />} />
+            <Route path="/diamonds/products" element={<DiamondsChild />} />
+            <Route path="/gemstones" element={<Gemstone />} />
+            <Route path="/engagement" element={<Engagement />} />
+            <Route path="/engagement/products" element={<EngagementChild />} />
+
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/test" element={<Test />} />
+
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+
+        {/* Render the footer */}
+        <div className="min-h-[50vh]">
+          <ScrollToTop />
+
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
